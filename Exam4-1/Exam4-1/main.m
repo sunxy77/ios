@@ -23,10 +23,11 @@ Node *createNode(int no, Node *next) {
     return node;
 }
 
-void printList(Node *list) {
-    
-    for (Node *node=list; node!=NULL; node=node->next) {
+void printList(Node *node) {
+    while (node != NULL) {
         printf("current no = %d\n", node->no);
+        
+        node = node->next;
     }
 }
 
@@ -38,6 +39,16 @@ void rprintList(Node *node) {
         }
         
         printf("current no = %d\n", node->no);
+    }
+}
+
+void destroyList(Node *node) {
+    if (node != NULL) {
+        if (node->next != NULL) {
+            destroyList(node->next);
+        }
+        
+        free(node);
     }
 }
 
@@ -55,6 +66,9 @@ int main(int argc, const char * argv[]) {
         
         printf("逆序输出\n");
         rprintList(first);
+        
+        printf("销毁链接\n");
+        destroyList(first);
     }
     
     return 0;
