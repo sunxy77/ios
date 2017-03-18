@@ -8,38 +8,54 @@
 
 #import <Foundation/Foundation.h>
 
-typedef struct student_ {
-    char *name;
-    int age;
-    struct student_ *next;
-} Student;
+typedef struct Node_ {
+    int no;
+    struct Node_ *next;
+} Node;
 
-Student *createStudent(char *name, int age, Student *next) {
+Node *createNode(int no, Node *next) {
     
-    Student *student = malloc(sizeof(Student));
-    student->name = name;
-    student->age = age;
+    Node *node = malloc(sizeof(Node));
+    node->no = no;
     
-    student->next = next;
+    node->next = next;
     
-    return student;
+    return node;
 }
 
-void printList(Student *firstNode) {
+void printList(Node *list) {
     
-    for (Student *node=firstNode; node!=NULL; node=node->next) {
-        printf("name = %s, age = %d\n", node->name, node->age);
+    for (Node *node=list; node!=NULL; node=node->next) {
+        printf("current no = %d\n", node->no);
+    }
+}
+
+void rprintList(Node *node) {
+    
+    if (node != NULL) {
+        if (node->next != NULL) {
+            rprintList(node->next);
+        }
+        
+        printf("current no = %d\n", node->no);
     }
 }
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
+        Node *current = createNode(0, NULL);
+        Node *first = current;
         
-        Student *first = createStudent("张三", 18, NULL);
+        for (int i = 1; i < 10; i ++) {
+            current->next = createNode(i, NULL);
+            current = current->next;
+        }
         
         printList(first);
-
         
+        printf("逆序输出\n");
+        rprintList(first);
     }
+    
     return 0;
 }
