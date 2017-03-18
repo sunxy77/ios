@@ -62,6 +62,7 @@ int main(int argc, const char * argv[]) {
             current = current->next;
         }
         
+        printf("链表输出\n");
         printList(first);
         
         printf("逆序输出\n");
