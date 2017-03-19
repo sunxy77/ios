@@ -21,5 +21,14 @@ typedef struct Array_ {
 Array *ArrayCreate();
 int ArrayGetLength(Array *arr);
 void ArrayAdd(Array *arr, int value);
+void ArrayDelete(Array *arr, int index);
+void ArrayModify(Array *arr, int index, int newValue);
+
+int ArrayGet(Array *arr, int index);
+void ArrayDestory(Array *arr);
+
+
+
+void ArrayPrint(Array *arr);
 
 #endif /* Array_h */
