@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "AEB6D37A1E7E48C800DCC8C5"
-               BuildableName = "Exam3-3"
-               BlueprintName = "Exam3-3"
-               ReferencedContainer = "container:Exam3-3.xcodeproj">
+               BuildableName = "Exam3-1"
+               BlueprintName = "Exam3-1"
+               ReferencedContainer = "container:Exam3-1.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AEB6D37A1E7E48C800DCC8C5"
-            BuildableName = "Exam3-3"
-            BlueprintName = "Exam3-3"
-            ReferencedContainer = "container:Exam3-3.xcodeproj">
+            BuildableName = "Exam3-1"
+            BlueprintName = "Exam3-1"
+            ReferencedContainer = "container:Exam3-1.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AEB6D37A1E7E48C800DCC8C5"
-            BuildableName = "Exam3-3"
-            BlueprintName = "Exam3-3"
-            ReferencedContainer = "container:Exam3-3.xcodeproj">
+            BuildableName = "Exam3-1"
+            BlueprintName = "Exam3-1"
+            ReferencedContainer = "container:Exam3-1.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AEB6D37A1E7E48C800DCC8C5"
-            BuildableName = "Exam3-3"
-            BlueprintName = "Exam3-3"
-            ReferencedContainer = "container:Exam3-3.xcodeproj">
+            BuildableName = "Exam3-1"
+            BlueprintName = "Exam3-1"
+            ReferencedContainer = "container:Exam3-1.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

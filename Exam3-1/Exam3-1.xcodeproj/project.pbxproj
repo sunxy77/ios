@@ -24,7 +24,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		AEB6D37B1E7E48C800DCC8C5 /* Exam3-3 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Exam3-3"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEB6D37B1E7E48C800DCC8C5 /* Exam3-1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Exam3-1"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEB6D37E1E7E48C800DCC8C5 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		AEB6D3871E7E4CD600DCC8C5 /* girlFriend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = girlFriend.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -43,7 +43,7 @@
 		AEB6D3721E7E48C800DCC8C5 = {
 			isa = PBXGroup;
 			children = (
-				AEB6D37D1E7E48C800DCC8C5 /* Exam3-3 */,
+				AEB6D37D1E7E48C800DCC8C5 /* Exam3-1 */,
 				AEB6D37C1E7E48C800DCC8C5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -51,26 +51,27 @@
 		AEB6D37C1E7E48C800DCC8C5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AEB6D37B1E7E48C800DCC8C5 /* Exam3-3 */,
+				AEB6D37B1E7E48C800DCC8C5 /* Exam3-1 */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		AEB6D37D1E7E48C800DCC8C5 /* Exam3-3 */ = {
+		AEB6D37D1E7E48C800DCC8C5 /* Exam3-1 */ = {
 			isa = PBXGroup;
 			children = (
 				AEB6D3871E7E4CD600DCC8C5 /* girlFriend.swift */,
 				AEB6D37E1E7E48C800DCC8C5 /* main.swift */,
 			);
+			name = "Exam3-1";
 			path = "Exam3-3";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AEB6D37A1E7E48C800DCC8C5 /* Exam3-3 */ = {
+		AEB6D37A1E7E48C800DCC8C5 /* Exam3-1 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AEB6D3821E7E48C800DCC8C5 /* Build configuration list for PBXNativeTarget "Exam3-3" */;
+			buildConfigurationList = AEB6D3821E7E48C800DCC8C5 /* Build configuration list for PBXNativeTarget "Exam3-1" */;
 			buildPhases = (
 				AEB6D3771E7E48C800DCC8C5 /* Sources */,
 				AEB6D3781E7E48C800DCC8C5 /* Frameworks */,
@@ -80,9 +81,9 @@
 			);
 			dependencies = (
 			);
-			name = "Exam3-3";
+			name = "Exam3-1";
 			productName = "Exam3-3";
-			productReference = AEB6D37B1E7E48C800DCC8C5 /* Exam3-3 */;
+			productReference = AEB6D37B1E7E48C800DCC8C5 /* Exam3-1 */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -101,7 +102,7 @@
 					};
 				};
 			};
-			buildConfigurationList = AEB6D3761E7E48C800DCC8C5 /* Build configuration list for PBXProject "Exam3-3" */;
+			buildConfigurationList = AEB6D3761E7E48C800DCC8C5 /* Build configuration list for PBXProject "Exam3-1" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -113,7 +114,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AEB6D37A1E7E48C800DCC8C5 /* Exam3-3 */,
+				AEB6D37A1E7E48C800DCC8C5 /* Exam3-1 */,
 			);
 		};
 /* End PBXProject section */
@@ -238,7 +239,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AEB6D3761E7E48C800DCC8C5 /* Build configuration list for PBXProject "Exam3-3" */ = {
+		AEB6D3761E7E48C800DCC8C5 /* Build configuration list for PBXProject "Exam3-1" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AEB6D3801E7E48C800DCC8C5 /* Debug */,
@@ -247,13 +248,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AEB6D3821E7E48C800DCC8C5 /* Build configuration list for PBXNativeTarget "Exam3-3" */ = {
+		AEB6D3821E7E48C800DCC8C5 /* Build configuration list for PBXNativeTarget "Exam3-1" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AEB6D3831E7E48C800DCC8C5 /* Debug */,
 				AEB6D3841E7E48C800DCC8C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
