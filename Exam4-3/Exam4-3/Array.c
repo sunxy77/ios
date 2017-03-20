@@ -48,6 +48,31 @@ void ArrayAdd(Array *arr, int value) {
     arr->length_++;
 }
 
+void ArrayAddIndex(Array *arr, int index, int value) {
+    if (arr->length_ >= arr->capacity_) {
+        
+        arr->capacity_ *= 2;
+        
+        int *oldValues = arr->values_;
+        arr->values_ = allocMemoryByCapacity(arr);
+        memcpy(arr->values_, oldValues, sizeof(int) * arr->length_);
+        free(oldValues);
+    }
+    
+    for (int i = arr->length_; i >= 0; i--) {
+        if (i > index) {
+            arr->values_[i+1] = arr->values_[i];
+        } else if (i == index) {
+            arr->values_[i+1] = arr->values_[i];
+            arr->values_[i] = value;
+        } else {
+            break;
+        }
+    }
+    
+    arr->length_++;
+}
+
 void ArrayDelete(Array *arr, int index) {
     if (index > 0 && index < arr->length_) {
         int *temp = allocMemoryByCapacity(arr);

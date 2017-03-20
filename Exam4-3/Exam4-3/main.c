@@ -21,6 +21,10 @@ int main(int argc, const char * argv[]) {
     printf("向数组中添加数据并打印\n");
     ArrayPrint(arr);
     
+    ArrayAddIndex(arr, 2, 120);
+    printf("向数组指定索引添加数据并打印\n");
+    ArrayPrint(arr);
+    
     ArrayDelete(arr, 2);
     printf("删除数组中索引为%d数据并打印\n", 2);
     ArrayPrint(arr);

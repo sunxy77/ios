@@ -21,6 +21,7 @@ typedef struct Array_ {
 Array *ArrayCreate();
 int ArrayGetLength(Array *arr);
 void ArrayAdd(Array *arr, int value);
+void ArrayAddIndex(Array *arr, int index, int value);
 void ArrayDelete(Array *arr, int index);
 void ArrayModify(Array *arr, int index, int newValue);
 
