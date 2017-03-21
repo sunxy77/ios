@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view clipsSubviews="YES" tag="10" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HGa-1s-uJE" userLabel="redView">
+                                <frame key="frameInset" minX="50" minY="115" width="190" height="67"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BHD-il-Klz">
+                                        <frame key="frameInset" minX="8" minY="8" width="97" height="246"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.055750432107510517" green="0.61730399532213953" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.442750853" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ok9-qJ-fqI">
+                                <frame key="frameInset" minX="50" minY="506" width="169" height="67"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <inset key="imageEdgeInsets" minX="10" minY="10" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Button1" image="1.jpg">
+                                    <color key="titleColor" red="0.055750432109999998" green="0.61730399530000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <state key="highlighted" image="2.jpg"/>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1.jpg" highlightedImage="2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="6E7-sO-ut0">
+                                <frame key="frameInset" minX="68" minY="234" width="278" height="82"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.20988883260171853" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.90000000000000002" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="xQv-1m-BfP">
+                                <frame key="frameInset" minX="66" minY="347" width="282" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.0053974334670433555" blue="0.91631604718132531" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </slider>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jLp-vi-B4H">
+                                <frame key="frameInset" minX="68" minY="443" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </switch>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bVo-Lm-NUw">
+                                <frame key="frameInset" minX="216" minY="443" width="119" height="74"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <connections>
+                        <outlet property="myImage" destination="6E7-sO-ut0" id="NZi-7U-u1K"/>
+                        <outlet property="mySlider" destination="xQv-1m-BfP" id="AXA-kX-Gl7"/>
+                        <outlet property="mySwitch" destination="jLp-vi-B4H" id="QYH-dA-nBE"/>
+                        <outlet property="redView" destination="HGa-1s-uJE" id="6BV-gy-pM9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="84" y="38.23088455772114"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="1.jpg" width="100" height="67"/>
+        <image name="2.jpg" width="100" height="74"/>
+    </resources>
+</document>
