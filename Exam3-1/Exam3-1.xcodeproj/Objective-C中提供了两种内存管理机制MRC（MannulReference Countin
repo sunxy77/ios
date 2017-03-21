@@ -1,0 +1,6 @@
+Objective-C中提供了两种内存管理机制MRC（MannulReference Counting）和ARC(Automatic Reference Counting)，分别提供对内存的手动和自动管理，来满足不同的需求。
+
+MRC是一种比较老的内存管理机制即手动管理，若需要使用此模式，xcode开发工具新建工程缺省是采用新模式自动管理。需要手动管理，需按如下说明设置，
+Build Settings -> Combined -> Apple LLVM 7.0 - Lanaguage - Objective C -> Objective C Automatic Reference Counting
+
+ARC是一种新式的内存管理机制
