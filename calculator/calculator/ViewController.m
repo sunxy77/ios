@@ -33,6 +33,9 @@
     [self.mul addTarget:self action:@selector(calc:) forControlEvents:UIControlEventTouchUpInside];
     
     [self.div addTarget:self action:@selector(calc:) forControlEvents:UIControlEventTouchUpInside];
+    
+    self.input1.keyboardType = UIKeyboardTypeNumberPad;
+    self.input2.keyboardType = UIKeyboardTypeNumberPad;
 }
 
 -(void)calc:(UIButton*)btn {
@@ -40,14 +43,28 @@
     NSString *str2 = self.input2.text;
     
     float ret = 0;
-    if ([btn.titleLabel.text isEqualToString:@"+"]) {
-        ret = [str1 floatValue] + [str2 floatValue];
-    } else if ([btn.titleLabel.text isEqualToString:@"-"]) {
-        ret = [str1 floatValue] - [str2 floatValue];
-    } else if ([btn.titleLabel.text isEqualToString:@"*"]) {
-        ret = [str1 floatValue] * [str2 floatValue];
-    } else if ([btn.titleLabel.text isEqualToString:@"/"]) {
-        ret = [str1 floatValue] / [str2 floatValue];
+    
+    switch (btn.tag) {
+        case 10:
+            ret = [str1 floatValue] + [str2 floatValue];
+            break;
+        case 20:
+            ret = [str1 floatValue] - [str2 floatValue];
+            break;
+        case 30:
+            ret = [str1 floatValue] * [str2 floatValue];
+            break;
+        case 40:
+            if ([str2 floatValue] == 0) {
+                self.result.text = @"除数不能为0";
+                return;
+            } else {
+                ret = [str1 floatValue] / [str2 floatValue];
+            }
+            break;
+            
+        default:
+            break;
     }
     
     self.result.text = [NSString stringWithFormat:@"%.02f", ret];
@@ -83,6 +100,13 @@
 -(void)div1 {
     NSString *str1 = self.input1.text;
     NSString *str2 = self.input2.text;
+    
+    float f2 = [str2 floatValue];
+    if (f2 == 0) {
+        self.result.text = @"除数不能为0";
+        return;
+    }
+    
     
     float ret = [str1 floatValue] / [str2 floatValue];
     
