@@ -90,6 +90,15 @@
 
 }
 
+- (IBAction)rotate:(UIButton *)sender {
+    
+    if (sender.tag == 70) {
+        self.pic.transform = CGAffineTransformRotate(self.pic.transform, M_PI_2);
+    } else if (sender.tag == 80) {
+        self.pic.transform = CGAffineTransformRotate(self.pic.transform, -M_PI_2);
+    }
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
