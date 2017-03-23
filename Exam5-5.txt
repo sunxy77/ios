@@ -1,0 +1,48 @@
+
+UIView的常用属性和方法 
+
+常用属性
+
+@property(nonatomic) CGRect            frame;
+@property(nonatomic) CGRect            bounds;
+@property(nonatomic) CGPoint           center;
+
+// 视图变换操作，包括平移，放大，缩小，旋转
+@property(nonatomic) CGAffineTransform transform;
+
+// 视图透明度设置
+@property(nonatomic)                 CGFloat           alpha; 
+
+@property(nonatomic)                 BOOL              clipsToBounds; 
+
+@property(nonatomic)                 UIViewContentMode contentMode;
+
+
+常用方法
+向本身添加一个子视图
+- (void)addSubview:(UIView *)view;
+
+把当前view从它的父view和窗口中移除，同时也把它从响应事件操作的响应者链中移除。
+- (void)removeFromSuperview;
+
+
+将view添加到指定的层。
+- (void)insertSubview:(UIView *)view atIndex:(NSInteger)index;
+
+向本身指定子视图之下插入一个子视图
+- (void)insertSubview:(UIView *)view belowSubview:(UIView *)siblingSubview;
+
+向本身指定子视图之上插入一个子视图
+- (void)insertSubview:(UIView *)view aboveSubview:(UIView *)siblingSubview;
+
+
+UIImageView 3种填充属性的不同
+
+图片会填充整个ImageView视图，导致图片没有按比例放缩即图片会有变形。
+UIViewContentModeScaleToFill,
+
+图片会按比例填充ImageView视图，未填充的ImageView视图透明显示
+UIViewContentModeScaleAspectFit,      // contents scaled to fit with fixed aspect. remainder is transparent
+
+图片会按比例填充所有ImageView视图，超出部分可以裁剪
+UIViewContentModeScaleAspectFill,     // contents scaled to fill with fixed aspect. some portion of content may be clipped.
