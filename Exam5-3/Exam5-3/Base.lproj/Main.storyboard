@@ -26,7 +26,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="选中"/>
                                 <connections>
-                                    <action selector="done:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6QO-p7-80W"/>
+                                    <action selector="done:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5JW-3V-5E1"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="20" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iVE-c2-IHT" userLabel="disabledButton">
@@ -34,7 +34,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="禁用"/>
                                 <connections>
-                                    <action selector="done:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QPG-ia-MZU"/>
+                                    <action selector="done:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vav-nb-koi"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="30" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k0L-Ul-bgx" userLabel="normalButton">
@@ -42,7 +42,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="正常"/>
                                 <connections>
-                                    <action selector="done:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g1Q-uW-eJq"/>
+                                    <action selector="done:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9kL-QV-RXN"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nBf-eQ-ajY" userLabel="imageButton">

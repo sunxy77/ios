@@ -26,25 +26,43 @@
     CGFloat imageViewWidth = CGRectGetWidth(self.imageBtn.imageView.frame);
     CGFloat labelWidth = CGRectGetWidth(self.imageBtn.titleLabel.frame);
     
-    UIEdgeInsets imageEdgeInsets = UIEdgeInsetsMake(0,0 + labelWidth,0,0 - labelWidth);
-    UIEdgeInsets titleEdgeInsets = UIEdgeInsetsMake(0,0 - imageViewWidth,0, 0 + imageViewWidth);
+    UIEdgeInsets imageEdgeInsets = UIEdgeInsetsMake(0, 0 + labelWidth, 0, 0 - labelWidth);
+    UIEdgeInsets titleEdgeInsets = UIEdgeInsetsMake(0, 0 - imageViewWidth, 0, 0 + imageViewWidth);
     
     [self.imageBtn setImageEdgeInsets:imageEdgeInsets];
     [self.imageBtn setTitleEdgeInsets:titleEdgeInsets];
 }
+
 - (IBAction)done:(UIButton *)sender {
+    
+    self.imageBtn.selected = NO;
+    self.imageBtn.enabled = YES;
     
     switch (sender.tag) {
         case 10: // 选中
+            
             self.imageBtn.selected = YES;
+            
+            self.selectedBtn.enabled = NO;
+            
             break;
         case 20: // 禁用
+            
+            [self.imageBtn setTitle:@"禁用" forState:UIControlStateDisabled];
+            self.disabledBtn.enabled = NO;
+            self.normalBtn.enabled = YES;
+            
             self.imageBtn.enabled = NO;
             break;
         case 30: // 正常
             self.imageBtn.enabled = YES;
-            break;
+            [self.imageBtn setTitle:@"正常" forState:UIControlStateNormal];
             
+            self.selectedBtn.enabled = YES;
+            self.disabledBtn.enabled = YES;
+            self.normalBtn.enabled = NO;
+            
+            break;
         default:
             break;
     }
