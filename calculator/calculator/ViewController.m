@@ -13,10 +13,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *input1;
 @property (weak, nonatomic) IBOutlet UITextField *input2;
 
-@property (weak, nonatomic) IBOutlet UIButton *add;
-@property (weak, nonatomic) IBOutlet UIButton *sub;
-@property (weak, nonatomic) IBOutlet UIButton *mul;
-@property (weak, nonatomic) IBOutlet UIButton *div;
 @property (weak, nonatomic) IBOutlet UILabel *result;
 @end
 
@@ -25,26 +21,28 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    
-    [self.add addTarget:self action:@selector(calc:) forControlEvents:UIControlEventTouchUpInside];
-    
-    [self.sub addTarget:self action:@selector(calc:) forControlEvents:UIControlEventTouchUpInside];
-    
-    [self.mul addTarget:self action:@selector(calc:) forControlEvents:UIControlEventTouchUpInside];
-    
-    [self.div addTarget:self action:@selector(calc:) forControlEvents:UIControlEventTouchUpInside];
-    
     self.input1.keyboardType = UIKeyboardTypeNumberPad;
     self.input2.keyboardType = UIKeyboardTypeNumberPad;
 }
 
--(void)calc:(UIButton*)btn {
+- (IBAction)calculate:(UIButton *)sender {
+    
     NSString *str1 = self.input1.text;
     NSString *str2 = self.input2.text;
     
+    if ([str1 isEqualToString:@""]) {
+        self.result.text = @"输入为空，请重新输入";
+        return;
+    }
+    
+    if ([str2 isEqualToString:@""]) {
+        self.result.text = @"输入为空，请重新输入";
+        return;
+    }
+    
     float ret = 0;
     
-    switch (btn.tag) {
+    switch (sender.tag) {
         case 10:
             ret = [str1 floatValue] + [str2 floatValue];
             break;
@@ -66,49 +64,6 @@
         default:
             break;
     }
-    
-    self.result.text = [NSString stringWithFormat:@"%.02f", ret];
-}
-
--(void)add1 {
-    NSString *str1 = self.input1.text;
-    NSString *str2 = self.input2.text;
-    
-    float ret = [str1 floatValue] + [str2 floatValue];
-    
-    self.result.text = [NSString stringWithFormat:@"%.02f", ret];
-}
-
--(void)sub1 {
-    NSString *str1 = self.input1.text;
-    NSString *str2 = self.input2.text;
-    
-    float ret = [str1 floatValue] - [str2 floatValue];
-    
-    self.result.text = [NSString stringWithFormat:@"%.02f", ret];
-}
-
--(void)mul1 {
-    NSString *str1 = self.input1.text;
-    NSString *str2 = self.input2.text;
-    
-    float ret = [str1 floatValue] * [str2 floatValue];
-    
-    self.result.text = [NSString stringWithFormat:@"%.02f", ret];
-}
-
--(void)div1 {
-    NSString *str1 = self.input1.text;
-    NSString *str2 = self.input2.text;
-    
-    float f2 = [str2 floatValue];
-    if (f2 == 0) {
-        self.result.text = @"除数不能为0";
-        return;
-    }
-    
-    
-    float ret = [str1 floatValue] / [str2 floatValue];
     
     self.result.text = [NSString stringWithFormat:@"%.02f", ret];
 }

@@ -210,8 +210,7 @@
 				TargetAttributes = {
 					E82DB93D1E827E0F004F4359 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 2UD2M4F5M2;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					E82DB9561E827E0F004F4359 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -429,7 +428,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 2UD2M4F5M2;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = transform/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jiapuwang.net.transform;
@@ -441,7 +440,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 2UD2M4F5M2;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = transform/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jiapuwang.net.transform;
@@ -518,6 +517,7 @@
 				E82DB96D1E827E10004F4359 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E82DB96E1E827E10004F4359 /* Build configuration list for PBXNativeTarget "transformTests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +526,7 @@
 				E82DB9701E827E10004F4359 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E82DB9711E827E10004F4359 /* Build configuration list for PBXNativeTarget "transformUITests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +535,7 @@
 				E82DB9731E827E10004F4359 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
