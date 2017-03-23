@@ -27,54 +27,39 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-//    self.arrayAll;
+    [self showCurrentPage:0];
+}
+
+-(UIButton*)nextBtn {
+    if (_nextBtn == nil) {
+        _nextBtn = [[UIButton alloc] initWithFrame:CGRectMake(180, 380, 100, 40)];
+        _nextBtn.backgroundColor = [UIColor blueColor];
     
-    Singer *singer = self.arrayAll[0];
+        [_nextBtn setTitle:@"下一张" forState:UIControlStateNormal];
     
-    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(60, 150, 200, 40)];
+        [_nextBtn addTarget:self action:@selector(next) forControlEvents:UIControlEventTouchUpInside];
     
-    [titleLabel setBackgroundColor:[UIColor greenColor]];
+        [self.view addSubview:_nextBtn];
+    }
     
-    [self.view addSubview:titleLabel];
+    return _nextBtn;
+}
+
+-(UIButton*)prevBtn {
     
-    NSString  *strTitle = [NSString stringWithFormat:@"%@ %d/%d", singer.name, 1, self.arrayAll.count];
-    titleLabel.text = strTitle;
+    if (_prevBtn == nil) {
+        _prevBtn = [[UIButton alloc] initWithFrame:CGRectMake(60, 380, 100, 40)];
+        _prevBtn.backgroundColor = [UIColor blueColor];
+        
+        [_prevBtn setTitle:@"上一张" forState:UIControlStateNormal];
+        
+        [_prevBtn addTarget:self action:@selector(prev) forControlEvents:UIControlEventTouchUpInside];
+        
+        [self.view addSubview:_prevBtn];
+    }
     
-    titleLabel.textAlignment = NSTextAlignmentCenter;
-    
-    self.titleL = titleLabel;
-    
-    UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(60, 100, 200, 150)];
-    
-    imgView.backgroundColor = [UIColor redColor];
-    imgView.center = self.view.center;
-    
-    [self.view addSubview:imgView];
-    self.imgView = imgView;
-    
-    imgView.image = [UIImage imageNamed:singer.pic];
-    
-    
-    UIButton *prevBtn = [[UIButton alloc] initWithFrame:CGRectMake(60, 400, 100, 40)];
-    prevBtn.backgroundColor = [UIColor grayColor];
-    
-    [prevBtn setTitle:@"上一张" forState:UIControlStateNormal];
-    
-    [prevBtn addTarget:self action:@selector(prev) forControlEvents:UIControlEventTouchUpInside];
-    
-    [self.view addSubview:prevBtn];
-    self.prevBtn = prevBtn;
-    
-    UIButton *nextBtn = [[UIButton alloc] initWithFrame:CGRectMake(200, 400, 100, 40)];
-    nextBtn.backgroundColor = [UIColor grayColor];
-    
-    [nextBtn setTitle:@"下一张" forState:UIControlStateNormal];
-    
-    [nextBtn addTarget:self action:@selector(next) forControlEvents:UIControlEventTouchUpInside];
-    
-    [self.view addSubview:nextBtn];
-    self.nextBtn = nextBtn;
-    
+    return _prevBtn;
+   
 }
 
 #pragma mark 上一张
@@ -86,15 +71,40 @@
         self.iIndex = self.arrayAll.count - 1;
     }
     
-    Singer *singer = self.arrayAll[self.iIndex];
+    [self showCurrentPage:self.iIndex];
+}
+
+-(void)showCurrentPage:(int)iPage {
     
-    NSString  *strTitle = [NSString stringWithFormat:@"%@ %d/%d", singer.name, self.iIndex+1, self.arrayAll.count];
+    if (iPage == 0) {
+        self.prevBtn.backgroundColor = [UIColor grayColor];
+        self.prevBtn.enabled = NO;
+    } else {
+        self.prevBtn.backgroundColor = [UIColor blueColor];
+        self.prevBtn.enabled = YES;
+    }
+    
+    
+    if (iPage == self.arrayAll.count - 1) {
+        self.nextBtn.enabled = NO;
+        self.nextBtn.backgroundColor = [UIColor grayColor];
+    } else {
+        self.nextBtn.enabled = YES;
+        self.nextBtn.backgroundColor = [UIColor blueColor];
+    }
+    
+    
+    Singer *singer = self.arrayAll[iPage];
+    
+    NSString  *strTitle = [NSString stringWithFormat:@"%@ %d/%d", singer.name, iPage+1, self.arrayAll.count];
     self.titleL.text = strTitle;
     
     self.imgView.image = [UIImage imageNamed:singer.pic];
     
+    
+    
+    
 }
-
 #pragma mark 下一张
 -(void)next {
     self.iIndex++;
@@ -103,13 +113,37 @@
         self.iIndex = 0;
     }
     
-    Singer *singer = self.arrayAll[self.iIndex];
+    [self showCurrentPage:self.iIndex];
+}
+
+-(UILabel*)titleL {
     
-    NSString  *strTitle = [NSString stringWithFormat:@"%@ %d/%d", singer.name, self.iIndex+1, self.arrayAll.count];
-    self.titleL.text = strTitle;
+    if (_titleL == nil) {
     
-    self.imgView.image = [UIImage imageNamed:singer.pic];
+        _titleL = [[UILabel alloc] initWithFrame:CGRectMake(60, 150, 200, 40)];
+        [_titleL setBackgroundColor:[UIColor greenColor]];
+        _titleL.textAlignment = NSTextAlignmentCenter;
+        
+        [self.view addSubview:_titleL];
+    }
     
+    return _titleL;
+}
+
+-(UIImageView*)imgView {
+    
+    if (_imgView == nil) {
+    
+        _imgView= [[UIImageView alloc] initWithFrame:CGRectMake(60, 100, 200, 150)];
+    
+        _imgView.backgroundColor = [UIColor redColor];
+        _imgView.center = self.view.center;
+    
+        [self.view addSubview:_imgView];
+        
+    }
+    
+    return _imgView;
 }
 
 -(NSMutableArray*) arrayAll {
