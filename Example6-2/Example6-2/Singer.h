@@ -10,11 +10,11 @@
 
 @interface Singer : NSObject
 
-@property(nonatomic, copy) NSString *name;
-@property(nonatomic, copy) NSString *songname;
-@property(nonatomic, copy) NSString *pic;
+@property(nonatomic, copy) NSString *name; // 歌手
+@property(nonatomic, copy) NSString *songname; // 歌曲名称
+@property(nonatomic, copy) NSString *pic; // 歌手图片
 
--(instancetype)initWithDict:(NSDictionary*)dict;
-+(instancetype)singerWithDict:(NSDictionary*)dict;
+-(instancetype)initWithDict:(NSDictionary*)dict; // 根据字典创建一个模型
++(instancetype)singerWithDict:(NSDictionary*)dict; // 根据字典创建一个模型
 
 @end

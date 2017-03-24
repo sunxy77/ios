@@ -10,12 +10,12 @@
 #import "Singer.h"
 
 @interface singerView : UIView
-@property (weak, nonatomic) IBOutlet UIImageView *img;
-@property (weak, nonatomic) IBOutlet UILabel *label;
-@property (weak, nonatomic) IBOutlet UIButton *btn;
+@property (weak, nonatomic) IBOutlet UIImageView *img; // 歌手图片
+@property (weak, nonatomic) IBOutlet UILabel *label; // 歌曲名称
+@property (weak, nonatomic) IBOutlet UIButton *btn; // 下载按钮
 
-@property (nonatomic, strong) Singer *singer;
+@property (nonatomic, strong) Singer *singer; // 模型数据
 
-+(instancetype)share;
++(instancetype)templateView; // 获取一个View模板
 
 @end

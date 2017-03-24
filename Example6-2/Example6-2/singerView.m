@@ -18,7 +18,10 @@
 }
 */
 
-+(instancetype)share {
+// 获取一个view模板
++(instancetype)templateView {
+    
+    // 读取xib文件数据
     NSArray *arr = [[NSBundle mainBundle] loadNibNamed:@"singer" owner:nil options:nil];
     
     singerView *viewFromXib = [arr firstObject];
@@ -35,10 +38,12 @@
     }
 }
 
+// 点击下载执行的操作
 - (IBAction)download:(UIButton *)btn {
     
     btn.enabled = NO;
     
+    // 创建一个文件标签用于显示下载操作后的通知信息
     UILabel *tipLabel = [[UILabel alloc] initWithFrame:CGRectMake(60, 400, 200, 40)];
     tipLabel.backgroundColor = [UIColor grayColor];
     tipLabel.text = @"下载完成";
@@ -49,6 +54,7 @@
     
     tipLabel.alpha = 1;
     
+    // 动画效果，透明效果，2秒消失
     [UIView animateWithDuration:2.0 animations:^ {
         tipLabel.alpha = 0;
     } completion:^(BOOL finished) {
