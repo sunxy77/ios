@@ -9,6 +9,9 @@
 #import "ViewController.h"
 #import "Singer.h"
 
+#define btnWidth 80
+#define btnHeight 30
+
 @interface ViewController ()
 
 // 保存plist文件所读取的数据
@@ -35,7 +38,11 @@
 -(UIButton*)nextBtn {
     if (_nextBtn == nil) {
         // 创建下一张按钮
-        _nextBtn = [[UIButton alloc] initWithFrame:CGRectMake(180, 380, 80, 30)];
+        
+        float posY = CGRectGetMaxY(self.imgView.frame) + 15;
+        float posX = self.imgView.frame.origin.x + 120;
+        
+        _nextBtn = [[UIButton alloc] initWithFrame:CGRectMake(posX, posY, btnWidth, btnHeight)];
         
         [_nextBtn setTitle:@"下一张" forState:UIControlStateNormal];
         _nextBtn.titleLabel.font = [UIFont systemFontOfSize:14];
@@ -57,7 +64,11 @@
     
     if (_prevBtn == nil) {
         // 创建上一张按钮
-        _prevBtn = [[UIButton alloc] initWithFrame:CGRectMake(60, 380, 80, 30)];
+        
+        float posY = CGRectGetMaxY(self.imgView.frame) + 15;
+        float posX = self.imgView.frame.origin.x;
+        
+        _prevBtn = [[UIButton alloc] initWithFrame:CGRectMake(posX, posY, btnWidth, btnHeight)];
         
         [_prevBtn setTitle:@"上一张" forState:UIControlStateNormal];
         _prevBtn.titleLabel.font = [UIFont systemFontOfSize:14];
@@ -129,7 +140,11 @@
     
     if (_titleL == nil) {
         // 创建标题
-        _titleL = [[UILabel alloc] initWithFrame:CGRectMake(60, 155, 200, 35)];
+        
+        float posY = CGRectGetMinY(self.imgView.frame) - 35 - 15;
+        float posX = self.imgView.frame.origin.x;
+        
+        _titleL = [[UILabel alloc] initWithFrame:CGRectMake(posX, posY, 200, 35)];
         [_titleL setBackgroundColor:[UIColor greenColor]];
         _titleL.textAlignment = NSTextAlignmentCenter;
         
@@ -144,6 +159,7 @@
     
     if (_imgView == nil) {
         // 创建图片view
+        
         _imgView= [[UIImageView alloc] initWithFrame:CGRectMake(60, 100, 200, 150)];
     
         _imgView.backgroundColor = [UIColor redColor];
