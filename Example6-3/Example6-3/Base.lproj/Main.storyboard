@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,38 +23,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kr6-nm-JB8" userLabel="red">
-                                <rect key="frame" x="30" y="577" width="85" height="60"/>
+                                <rect key="frame" x="30" y="5" width="101.5" height="632"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="oYh-5J-GSB"/>
-                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tEb-ae-iHN" userLabel="blue">
-                                <rect key="frame" x="145" y="577" width="85" height="60"/>
+                                <rect key="frame" x="141.5" y="5" width="203.5" height="505.5"/>
                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="jIs-5d-0o4"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zNd-2o-ThX" userLabel="black">
-                                <rect key="frame" x="260" y="577" width="85" height="60"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="7qp-vl-Kim"/>
-                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="zNd-2o-ThX" firstAttribute="width" secondItem="Kr6-nm-JB8" secondAttribute="width" id="1F4-JM-dM6"/>
-                            <constraint firstAttribute="trailing" secondItem="zNd-2o-ThX" secondAttribute="trailing" constant="30" id="1iu-F2-gPw"/>
-                            <constraint firstItem="tEb-ae-iHN" firstAttribute="leading" secondItem="Kr6-nm-JB8" secondAttribute="trailing" constant="30" id="5ki-YI-xJC"/>
-                            <constraint firstItem="7Qp-8J-gNR" firstAttribute="top" secondItem="tEb-ae-iHN" secondAttribute="bottom" constant="30" id="E0F-Zy-6fn"/>
-                            <constraint firstItem="zNd-2o-ThX" firstAttribute="leading" secondItem="tEb-ae-iHN" secondAttribute="trailing" constant="30" id="Ll2-GI-r01"/>
-                            <constraint firstItem="7Qp-8J-gNR" firstAttribute="top" secondItem="zNd-2o-ThX" secondAttribute="bottom" constant="30" id="UEI-ta-DUg"/>
-                            <constraint firstItem="Kr6-nm-JB8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="30" id="WXE-9E-R8C"/>
-                            <constraint firstItem="7Qp-8J-gNR" firstAttribute="top" secondItem="Kr6-nm-JB8" secondAttribute="bottom" constant="30" id="j4f-fD-Zoy"/>
-                            <constraint firstItem="tEb-ae-iHN" firstAttribute="width" secondItem="Kr6-nm-JB8" secondAttribute="width" id="zkf-0D-sYV"/>
+                            <constraint firstItem="tEb-ae-iHN" firstAttribute="leading" secondItem="Kr6-nm-JB8" secondAttribute="trailing" constant="10" id="0eC-qL-oIW"/>
+                            <constraint firstItem="Kr6-nm-JB8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="30" id="AtS-Qc-6fJ"/>
+                            <constraint firstItem="7Qp-8J-gNR" firstAttribute="top" secondItem="Kr6-nm-JB8" secondAttribute="bottom" constant="30" id="JEO-Ip-XVj"/>
+                            <constraint firstItem="tEb-ae-iHN" firstAttribute="height" secondItem="Kr6-nm-JB8" secondAttribute="height" multiplier="0.8" id="ciD-PJ-WDE"/>
+                            <constraint firstItem="tEb-ae-iHN" firstAttribute="top" secondItem="Kr6-nm-JB8" secondAttribute="top" id="reW-c7-lGH"/>
+                            <constraint firstAttribute="trailing" secondItem="tEb-ae-iHN" secondAttribute="trailing" constant="30" id="tiK-eM-KHL"/>
+                            <constraint firstItem="Kr6-nm-JB8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="5" id="wy2-NU-Yeg"/>
+                            <constraint firstItem="tEb-ae-iHN" firstAttribute="width" secondItem="Kr6-nm-JB8" secondAttribute="width" multiplier="2" id="yXf-bq-94S"/>
                         </constraints>
                     </view>
                 </viewController>
