@@ -10,6 +10,7 @@
 
 @implementation Singer
 
+// 根据字典创建一个模型
 -(instancetype)initWithDict:(NSDictionary*)dict {
     self = [super init];
     
@@ -21,6 +22,7 @@
     
 }
 
+// 根据字典创建一个模型
 +(instancetype)singerWithDict:(NSDictionary*)dict {
     return [[Singer alloc] initWithDict:dict];
 }
