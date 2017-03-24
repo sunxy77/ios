@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "Singer.h"
+#import "singerView.h"
 
 #define Ymargin 40  // view距离控制器view顶部的距离
 #define viewYmargin 25  // 两个view之间的间隔
@@ -30,7 +31,37 @@
 //    [self arrayAll];
     
     
+    int iXmargin = (self.view.frame.size.width - viewWidth * column) / (column + 1);
     
+    for (int i = 0; i < 9; i++) {
+        
+        if (i < self.arrayAll.count) {
+            Singer *singer = self.arrayAll[i];
+            
+            int col = i % column;
+            int row = i / column;
+            
+            int x = iXmargin + (viewWidth+iXmargin)*col;
+            int y = Ymargin + (viewHeight + iXmargin)*row;
+            
+            singerView *view1 = [singerView share];
+            view1.frame = CGRectMake(x, y, viewWidth, viewHeight);
+            
+            [self.view addSubview:view1];
+            
+            view1.singer = singer;
+            
+//            view1.img.image =[UIImage imageNamed:singer.pic];
+//            view1.label.text = singer.songname;
+
+        }
+        
+    }
+    
+    
+}
+
+-(void)cc {
     int iXmargin = (self.view.frame.size.width - viewWidth * column) / (column + 1);
     
     for (int i = 0; i < 9; i++) {
@@ -52,26 +83,25 @@
             
             [self.view addSubview:viewFromXib];
             
-//            UIImageView *img = viewFromXib.subviews[0];
+            //            UIImageView *img = viewFromXib.subviews[0];
             UIImageView *img = [viewFromXib viewWithTag:10];
             
             img.image = [UIImage imageNamed:singer.pic];
             
             
-//            UILabel *label = viewFromXib.subviews[1];
+            //            UILabel *label = viewFromXib.subviews[1];
             UILabel *label = [viewFromXib viewWithTag:20];
             label.text = singer.songname;
             
-//            UIButton *btn = viewFromXib.subviews[2];
+            //            UIButton *btn = viewFromXib.subviews[2];
             UIButton *btn = [viewFromXib viewWithTag:30];
             [btn addTarget:self action:@selector(download:) forControlEvents:UIControlEventTouchUpInside];
             
             
-//            [self addSubControl:viewFromXib singer:singer];
+            //            [self addSubControl:viewFromXib singer:singer];
         }
         
     }
-    
 }
 
 -(void) bb {

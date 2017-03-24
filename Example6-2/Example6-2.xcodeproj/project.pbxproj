@@ -28,6 +28,7 @@
 		AE6F69BF1E8411E1003F6460 /* normal.png in Resources */ = {isa = PBXBuildFile; fileRef = AE6F69BD1E8411E1003F6460 /* normal.png */; };
 		AE6F69C01E8411E1003F6460 /* highligted.png in Resources */ = {isa = PBXBuildFile; fileRef = AE6F69BE1E8411E1003F6460 /* highligted.png */; };
 		AEF0A10A1E84B38300458729 /* singer.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEF0A1091E84B38300458729 /* singer.xib */; };
+		AEF0A10D1E84BC6400458729 /* singerView.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF0A10C1E84BC6400458729 /* singerView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,8 @@
 		AE6F69BD1E8411E1003F6460 /* normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = normal.png; sourceTree = "<group>"; };
 		AE6F69BE1E8411E1003F6460 /* highligted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = highligted.png; sourceTree = "<group>"; };
 		AEF0A1091E84B38300458729 /* singer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = singer.xib; sourceTree = "<group>"; };
+		AEF0A10B1E84BC6400458729 /* singerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = singerView.h; sourceTree = "<group>"; };
+		AEF0A10C1E84BC6400458729 /* singerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = singerView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +92,8 @@
 		AE6F69741E83F77C003F6460 /* Example6-2 */ = {
 			isa = PBXGroup;
 			children = (
+				AEF0A10B1E84BC6400458729 /* singerView.h */,
+				AEF0A10C1E84BC6400458729 /* singerView.m */,
 				AE6F698E1E840361003F6460 /* Singer.h */,
 				AE6F698F1E840361003F6460 /* Singer.m */,
 				AE6F69781E83F77C003F6460 /* AppDelegate.h */,
@@ -214,6 +219,7 @@
 				AE6F697D1E83F77C003F6460 /* ViewController.m in Sources */,
 				AE6F697A1E83F77C003F6460 /* AppDelegate.m in Sources */,
 				AE6F69771E83F77C003F6460 /* main.m in Sources */,
+				AEF0A10D1E84BC6400458729 /* singerView.m in Sources */,
 				AE6F69901E840361003F6460 /* Singer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
