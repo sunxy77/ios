@@ -27,6 +27,7 @@
 		AE6F69BC1E8404E7003F6460 /* singer.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE6F69B11E8404E7003F6460 /* singer.plist */; };
 		AE6F69BF1E8411E1003F6460 /* normal.png in Resources */ = {isa = PBXBuildFile; fileRef = AE6F69BD1E8411E1003F6460 /* normal.png */; };
 		AE6F69C01E8411E1003F6460 /* highligted.png in Resources */ = {isa = PBXBuildFile; fileRef = AE6F69BE1E8411E1003F6460 /* highligted.png */; };
+		AEF0A10A1E84B38300458729 /* singer.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEF0A1091E84B38300458729 /* singer.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		AE6F69B11E8404E7003F6460 /* singer.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = singer.plist; sourceTree = "<group>"; };
 		AE6F69BD1E8411E1003F6460 /* normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = normal.png; sourceTree = "<group>"; };
 		AE6F69BE1E8411E1003F6460 /* highligted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = highligted.png; sourceTree = "<group>"; };
+		AEF0A1091E84B38300458729 /* singer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = singer.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 		AE6F69751E83F77C003F6460 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AEF0A1091E84B38300458729 /* singer.xib */,
 				AE6F69BD1E8411E1003F6460 /* normal.png */,
 				AE6F69BE1E8411E1003F6460 /* highligted.png */,
 				AE6F69A71E8404E7003F6460 /* 3.jpg */,
@@ -184,6 +187,7 @@
 				AE6F69B81E8404E7003F6460 /* 6.jpg in Resources */,
 				AE6F69B21E8404E7003F6460 /* 3.jpg in Resources */,
 				AE6F69B61E8404E7003F6460 /* 4.jpg in Resources */,
+				AEF0A10A1E84B38300458729 /* singer.xib in Resources */,
 				AE6F69BF1E8411E1003F6460 /* normal.png in Resources */,
 				AE6F69B31E8404E7003F6460 /* 2.jpg in Resources */,
 				AE6F69851E83F77C003F6460 /* LaunchScreen.storyboard in Resources */,

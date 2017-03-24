@@ -9,9 +9,11 @@
 #import "ViewController.h"
 #import "Singer.h"
 
-#define Ymargin 40
-#define viewWidth 80
-#define viewHeight 100
+#define Ymargin 40  // view距离控制器view顶部的距离
+#define viewYmargin 25  // 两个view之间的间隔
+#define viewWidth 80    // view的宽度
+#define viewHeight 100 // view的高度
+#define column 3 // 列数
 
 @interface ViewController ()
 
@@ -25,19 +27,68 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    [self arrayAll];
+//    [self arrayAll];
     
-    int iXmargin = (self.view.frame.size.width - viewWidth * 3) / 4;
+    
+    
+    int iXmargin = (self.view.frame.size.width - viewWidth * column) / (column + 1);
     
     for (int i = 0; i < 9; i++) {
         
         if (i < self.arrayAll.count) {
             Singer *singer = self.arrayAll[i];
             
-            int col = i % 3;
-            int row = i / 3;
+            int col = i % column;
+            int row = i / column;
             
-            UIView *view2 = [[UIView alloc] initWithFrame:CGRectMake(iXmargin + (viewWidth+iXmargin)*col, Ymargin + (viewHeight + iXmargin)*row, viewWidth, viewHeight)];
+            int x = iXmargin + (viewWidth+iXmargin)*col;
+            int y = Ymargin + (viewHeight + iXmargin)*row;
+            
+            NSArray *arr = [[NSBundle mainBundle] loadNibNamed:@"singer" owner:nil options:nil];
+            
+            UIView *viewFromXib = [arr firstObject];
+            
+            viewFromXib.frame = CGRectMake(x, y, viewWidth, viewHeight);
+            
+            [self.view addSubview:viewFromXib];
+            
+//            UIImageView *img = viewFromXib.subviews[0];
+            UIImageView *img = [viewFromXib viewWithTag:10];
+            
+            img.image = [UIImage imageNamed:singer.pic];
+            
+            
+//            UILabel *label = viewFromXib.subviews[1];
+            UILabel *label = [viewFromXib viewWithTag:20];
+            label.text = singer.songname;
+            
+//            UIButton *btn = viewFromXib.subviews[2];
+            UIButton *btn = [viewFromXib viewWithTag:30];
+            [btn addTarget:self action:@selector(download:) forControlEvents:UIControlEventTouchUpInside];
+            
+            
+//            [self addSubControl:viewFromXib singer:singer];
+        }
+        
+    }
+    
+}
+
+-(void) bb {
+    int iXmargin = (self.view.frame.size.width - viewWidth * column) / (column + 1);
+    
+    for (int i = 0; i < 9; i++) {
+        
+        if (i < self.arrayAll.count) {
+            Singer *singer = self.arrayAll[i];
+            
+            int col = i % column;
+            int row = i / column;
+            
+            int x = iXmargin + (viewWidth+iXmargin)*col;
+            int y = Ymargin + (viewHeight + iXmargin)*row;
+            
+            UIView *view2 = [[UIView alloc] initWithFrame:CGRectMake(x, y, viewWidth, viewHeight)];
             // view2.backgroundColor = [UIColor redColor];
             
             [self.view addSubview:view2];
@@ -45,11 +96,7 @@
             [self addSubControl:view2 singer:singer];
         }
         
-        
-        
     }
-    
-    
 }
 
 - (void)addSubControl:(UIView*)uiview singer:(Singer*)singer {
@@ -82,14 +129,17 @@
     
     [btn setBackgroundImage:[UIImage imageNamed:@"highlighted"] forState:UIControlStateHighlighted];
     
-    [btn addTarget:self action:@selector(download) forControlEvents:UIControlEventTouchUpInside];
+    [btn addTarget:self action:@selector(download:) forControlEvents:UIControlEventTouchUpInside];
     
     [uiview addSubview:btn];
     
     
 }
 
--(void)download {
+-(void)download:(UIButton*)btn {
+    
+    btn.enabled = NO;
+    
     UILabel *tipLabel = [[UILabel alloc] initWithFrame:CGRectMake(60, 400, 200, 40)];
     tipLabel.backgroundColor = [UIColor grayColor];
     tipLabel.text = @"下载完成";
