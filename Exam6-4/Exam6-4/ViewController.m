@@ -36,40 +36,43 @@
     
     [self.view addSubview:greenView];
     
+    // 禁用 autoresizing功能
     self.view.translatesAutoresizingMaskIntoConstraints = NO;
     redView.translatesAutoresizingMaskIntoConstraints = NO;
     blueView.translatesAutoresizingMaskIntoConstraints = NO;
     greenView.translatesAutoresizingMaskIntoConstraints = NO;
     
     // 设置红色View的横向排列，并设置红色View与绿色View的宽度相同
-    NSArray *arrH = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[view1]-20-[view3(==view1)]-20-|" options:NSLayoutFormatAlignAllTop | NSLayoutFormatAlignAllBottom metrics:nil views:@{@"view1":redView, @"view3":greenView}];
+    NSArray *arrH = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[view1]-20-[view2(==view1)]-20-|" options:NSLayoutFormatAlignAllTop | NSLayoutFormatAlignAllBottom metrics:nil views:@{@"view1":redView, @"view2":greenView}];
     
     [self.view addConstraints:arrH];
     
     // 设置红色View的纵向排列
-    NSArray *arrV = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-40-[view1]-|" options:0 metrics:nil views:@{@"view1":redView}];
+    NSArray *arrV = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-40-[view]" options:0 metrics:nil views:@{@"view":redView}];
     
     [self.view addConstraints:arrV];
     
-    // 设置红色View的高度
-    NSLayoutConstraint *c1 = [NSLayoutConstraint constraintWithItem:redView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0f constant:200.0f];
-    [self.view addConstraint:c1];
+    // 红，高度
+    NSLayoutConstraint *redHeight = [NSLayoutConstraint constraintWithItem:redView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0f constant:200.0f];
+    [self.view addConstraint:redHeight];
 
-    arrH = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[view2]-|" options:NSLayoutFormatAlignAllTop | NSLayoutFormatAlignAllBottom metrics:nil views:@{@"view2":blueView}];
+    // 蓝，顶
+    NSArray *arrBlueH = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[view]" options:NSLayoutFormatAlignAllTop | NSLayoutFormatAlignAllBottom metrics:nil views:@{@"view":blueView}];
     
-    [redView addConstraints:arrH];
+    [redView addConstraints:arrBlueH];
     
-    arrV = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[view2]-|" options:0 metrics:nil views:@{@"view2":blueView}];
+    // 蓝，左
+    NSArray *arrBlueV = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[view]" options:0 metrics:nil views:@{@"view":blueView}];
     
-    [redView addConstraints:arrV];
+    [redView addConstraints:arrBlueV];
     
-    // 设置蓝色View宽度为红色View一半，并添加至红色View中
-    NSLayoutConstraint *c2 = [NSLayoutConstraint constraintWithItem:blueView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:redView attribute:NSLayoutAttributeWidth multiplier:0.5f constant:0];
-    [redView addConstraint:c2];
+    // 蓝，宽度
+    NSLayoutConstraint *blueWidth = [NSLayoutConstraint constraintWithItem:blueView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:redView attribute:NSLayoutAttributeWidth multiplier:0.5f constant:0];
+    [redView addConstraint:blueWidth];
     
-    // 设置蓝色View高度为红色View一半，并添加至红色View中
-    NSLayoutConstraint *c3 = [NSLayoutConstraint constraintWithItem:blueView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:redView attribute:NSLayoutAttributeHeight multiplier:0.5f constant:0];
-    [redView addConstraint:c3];
+    // 蓝，高度
+    NSLayoutConstraint *blueHeight = [NSLayoutConstraint constraintWithItem:blueView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:redView attribute:NSLayoutAttributeHeight multiplier:0.5f constant:0];
+    [redView addConstraint:blueHeight];
 }
 
 - (void)didReceiveMemoryWarning {
