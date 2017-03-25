@@ -32,24 +32,23 @@
 
     [self.view bringSubviewToFront:self.next];
 
-    
-    self.page.frame = CGRectMake(0, kPicHeight - 60, kPicHeight, 40);
+    // self.page.frame = CGRectMake(100, kPicHeight - 60, kPicHeight, 40);
     self.page.numberOfPages = kPicCount;
     
     self.timer1 = [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(next:) userInfo:nil repeats:YES];
 }
 
-
-
 -(UIScrollView*)myView {
     if (_myView == nil) {
         _myView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
-        _myView.backgroundColor = [UIColor redColor];
+        // _myView.backgroundColor = [UIColor redColor];
         
         _myView.contentSize = CGSizeMake(kPicCount*kPicWidth, kPicHeight);
         _myView.pagingEnabled = YES;
         
         [self.view addSubview:_myView];
+        
+        _myView.delegate = self;
     }
     
     return _myView;
@@ -64,6 +63,8 @@
         
         rect = CGRectMake(kPicWidth*i, 0, kPicWidth, kPicHeight);
         UIImageView *img = [[UIImageView alloc]initWithFrame:rect];
+        
+        img.contentMode = UIViewContentModeScaleAspectFit;
         
         img.image = [UIImage imageNamed:strName];
         [self.myView addSubview:img];
