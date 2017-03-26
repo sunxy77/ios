@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>name</key>
+		<string>容祖儿</string>
+		<key>say</key>
+		<string>麻烦你</string>
+		<key>icon</key>
+		<string>1.jpg</string>
+		<key>sayTime</key>
+		<string>2017-03-26 15:34:00</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>张杰</string>
+		<key>say</key>
+		<string>满城烟花</string>
+		<key>icon</key>
+		<string>2.jpg</string>
+		<key>sayTime</key>
+		<string>2017-03-26 15:34:00</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>韩红</string>
+		<key>say</key>
+		<string>天路</string>
+		<key>icon</key>
+		<string>3.jpg</string>
+		<key>sayTime</key>
+		<string>2017-03-26 15:34:00</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>张靓颖</string>
+		<key>say</key>
+		<string>画心</string>
+		<key>icon</key>
+		<string>4.jpg</string>
+		<key>sayTime</key>
+		<string>2017-03-26 15:34:00</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>汪峰</string>
+		<key>say</key>
+		<string>北京</string>
+		<key>icon</key>
+		<string>5.jpg</string>
+		<key>sayTime</key>
+		<string>2017-03-26 15:34:00</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>邓紫棋</string>
+		<key>say</key>
+		<string>喜欢你</string>
+		<key>icon</key>
+		<string>6.jpg</string>
+		<key>sayTime</key>
+		<string>2017-03-26 15:34:00</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>邓丽君</string>
+		<key>say</key>
+		<string>小城故事</string>
+		<key>icon</key>
+		<string>7.jpg</string>
+		<key>sayTime</key>
+		<string>2017-03-26 15:34:00</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>周杰伦</string>
+		<key>say</key>
+		<string>青花瓷</string>
+		<key>icon</key>
+		<string>8.jpg</string>
+		<key>sayTime</key>
+		<string>2017-03-26 15:34:00</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>张学友</string>
+		<key>say</key>
+		<string>情网</string>
+		<key>icon</key>
+		<string>9.jpg</string>
+		<key>sayTime</key>
+		<string>2017-03-26 15:34:00</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>张国荣</string>
+		<key>say</key>
+		<string>倩女幽魂</string>
+		<key>icon</key>
+		<string>10.jpg</string>
+		<key>sayTime</key>
+		<string>2017-03-26 15:34:00</string>
+	</dict>
+</array>
+</plist>
