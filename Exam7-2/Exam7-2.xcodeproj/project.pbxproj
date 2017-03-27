@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE4EE7051E896DE5007CA499 /* ImageScroll.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4EE7041E896DE5007CA499 /* ImageScroll.m */; };
 		AE9A99171E88DE07003A003C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9A99161E88DE07003A003C /* main.m */; };
 		AE9A991A1E88DE07003A003C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9A99191E88DE07003A003C /* AppDelegate.m */; };
 		AE9A991D1E88DE07003A003C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9A991C1E88DE07003A003C /* ViewController.m */; };
@@ -22,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AE4EE7031E896DE5007CA499 /* ImageScroll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageScroll.h; sourceTree = "<group>"; };
+		AE4EE7041E896DE5007CA499 /* ImageScroll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageScroll.m; sourceTree = "<group>"; };
 		AE9A99121E88DE07003A003C /* Exam7-2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Exam7-2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE9A99161E88DE07003A003C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AE9A99181E88DE07003A003C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -79,6 +82,8 @@
 				AE9A99231E88DE07003A003C /* LaunchScreen.storyboard */,
 				AE9A99261E88DE07003A003C /* Info.plist */,
 				AE9A99151E88DE07003A003C /* Supporting Files */,
+				AE4EE7031E896DE5007CA499 /* ImageScroll.h */,
+				AE4EE7041E896DE5007CA499 /* ImageScroll.m */,
 			);
 			path = "Exam7-2";
 			sourceTree = "<group>";
@@ -176,6 +181,7 @@
 			files = (
 				AE9A991D1E88DE07003A003C /* ViewController.m in Sources */,
 				AE9A991A1E88DE07003A003C /* AppDelegate.m in Sources */,
+				AE4EE7051E896DE5007CA499 /* ImageScroll.m in Sources */,
 				AE9A99171E88DE07003A003C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -331,6 +337,7 @@
 				AE9A992B1E88DE07003A003C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
