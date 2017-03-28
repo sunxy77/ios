@@ -10,9 +10,8 @@
 #import "WaterFallFlowLayout.h"
 #import "WaterFallCollectionViewCell.h"
 
-CGFloat const kImgCount = 21; // 图片数量
-float const fImgWidth = 150;
-
+CGFloat const kImgCount = 15; // 图片数量
+#define fImgWidth [UIScreen mainScreen].bounds.size.width / 3 - 30 // 图片宽度
 static NSString *identifier = @"collectionView"; // 标识符
 
 @interface ViewController ()
@@ -25,7 +24,7 @@ static NSString *identifier = @"collectionView"; // 标识符
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
+    WaterFallFlowLayout *flowLayout = [[WaterFallFlowLayout alloc] init];
     
     self.collectionView = [[UICollectionView alloc] initWithFrame:[UIScreen mainScreen].bounds collectionViewLayout:flowLayout];
     self.collectionView.backgroundColor = [UIColor yellowColor];
@@ -82,7 +81,7 @@ static NSString *identifier = @"collectionView"; // 标识符
         NSMutableArray *muArr = [NSMutableArray array];
         
         for (int i = 1; i <= kImgCount; i++) {
-            UIImage *img = [UIImage imageNamed:[NSString stringWithFormat:@"%d.jpg", i]];
+            UIImage *img = [UIImage imageNamed:[NSString stringWithFormat:@"5/%d.jpg", i]];
             
             [muArr addObject:img];
         }

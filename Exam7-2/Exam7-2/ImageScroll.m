@@ -28,35 +28,33 @@
 /**
  初始化
  frame 页局
+ */
+-(instancetype)initWithFrame:(CGRect)frame {
+    return [super initWithFrame:frame];
+}
+
+/**
  data 图片数组
  ti 定时间隔
  */
--(instancetype)initWithFrame:(CGRect)frame data:(NSArray*)data ti:(NSTimeInterval)ti {
-    
+-(void)execute:(NSArray*)data ti:(NSTimeInterval)ti {
     if (data == nil || data.count < 2) {
-        return nil;
+        return;
     }
     
     if (ti <= 0) {
         ti = 2.0;
     }
     
-    self = [super initWithFrame:frame];
-    if (self) {
-        self.data = data;
-        self.ti = ti;
-        
-        [self createContentScrollView];
-        [self createPageControlView];
-        
-        [self initPic];
-        
-        [self on_timer];
-        
-        [self.myView setContentOffset:CGPointMake(kPicWidth, 0) animated:NO];
-    }
+    self.data = data;
+    self.ti = ti;
     
-    return self;
+    [self createContentScrollView];
+    [self createPageControlView];
+    
+    [self initPic];
+    
+    [self on_timer];
 }
 
 // 创建滚动视图
@@ -65,10 +63,12 @@
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:self.bounds];
     
     scrollView.contentSize = CGSizeMake((self.data.count+2)*kPicWidth, kPicHeight);
+    
+    // 第一张图片，第二个区块
     [scrollView setContentOffset:CGPointMake(kPicWidth, 0) animated:NO];
     
-    scrollView.pagingEnabled = YES;
-    scrollView.delegate = self;
+    scrollView.pagingEnabled = YES; // 支持分页
+    scrollView.delegate = self; // 指定协议实现类
     
     // 添加至视图
     [self addSubview:scrollView];
@@ -142,18 +142,11 @@
 
 // 定时器启动
 -(void)on_timer{
-    if (self.timer == nil) {
-        self.timer = [NSTimer scheduledTimerWithTimeInterval:self.ti target:self selector:@selector(next:) userInfo:nil repeats:YES];
-    }
-    
-    [self.timer setFireDate:[NSDate dateWithTimeInterval:self.ti sinceDate:[NSDate date]]];
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:self.ti target:self selector:@selector(next:) userInfo:nil repeats:YES];
 }
 
 // 定时器停止
 -(void)off_timer {
-    if (self.timer == nil) {
-        self.timer = [NSTimer scheduledTimerWithTimeInterval:self.ti target:self selector:@selector(next:) userInfo:nil repeats:YES];
-    }
     
     [self.timer invalidate];
 }

@@ -10,7 +10,8 @@
 
 @interface ImageScroll : UIView
 
--(instancetype)initWithFrame:(CGRect)frame data:(NSArray*)data ti:(NSTimeInterval)ti; // 初始化
+-(instancetype)initWithFrame:(CGRect)frame; // 初始化
+-(void)execute:(NSArray*)data ti:(NSTimeInterval)ti; // 程序入口
 -(void)on_timer; // 启动定时器
 -(void)off_timer; // 停止定时器
 @end

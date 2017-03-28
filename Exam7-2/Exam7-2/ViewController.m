@@ -28,10 +28,12 @@
     NSArray *arr = [self createArray];
     
     // 创建滚动实现对象
-    ImageScroll *myview = [[ImageScroll alloc] initWithFrame:self.view.bounds data:arr ti:2.0];
+    ImageScroll *myview = [[ImageScroll alloc] initWithFrame:self.view.bounds];
     
     if (myview) {
         [self.view addSubview:myview];
+        
+        [myview execute:arr ti:2.0];
     }
     
 }

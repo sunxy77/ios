@@ -30,14 +30,10 @@ CGFloat const colCount = 3;
     for (int i = 0; i < colCount; i++) {
         
         [_colArr addObject:[NSNumber numberWithFloat:top]];
-        
-        
-        [self layoutItemAtIndexPath:[NSIndexPath indexPathForItem:i inSection:0]];
-        
     }
     
     for( int i = 0; i < _cellCount; i++) {
-        
+        [self layoutItemAtIndexPath:[NSIndexPath indexPathForItem:i inSection:0]];
     }
 }
 
@@ -104,7 +100,7 @@ CGFloat const colCount = 3;
     
     float maxHeight = [[_colArr objectAtIndex:0] floatValue];
     
-    for (int i = 0; i < _colArr; i++) {
+    for (int i = 0; i < _colArr.count; i++) {
         float colHeight = [[_colArr objectAtIndex:i] floatValue];
         if (colHeight > maxHeight) {
             maxHeight = colHeight;
