@@ -11,7 +11,8 @@
 #import "WaterFallCollectionViewCell.h"
 
 CGFloat const kImgCount = 15; // 图片数量
-#define fImgWidth [UIScreen mainScreen].bounds.size.width / 3 - 30 // 图片宽度
+ #define fImgWidth 150 // 图片宽度
+// #define fImgWidth [UIScreen mainScreen].bounds.size.width / 3 - 5 // 图片宽度
 static NSString *identifier = @"collectionView"; // 标识符
 
 @interface ViewController ()

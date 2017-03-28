@@ -12,7 +12,7 @@
 #define kPicWidth [UIScreen mainScreen].bounds.size.width // 图片宽度
 #define kPicHeight [UIScreen mainScreen].bounds.size.height // Scroll视图高度
 
-@interface ImageScroll()<UIScrollViewDelegate>
+@interface ImageScroll()<UIScrollViewDelegate,UIGestureRecognizerDelegate>
 
 @property(nonatomic, weak) UIScrollView *myView; // 滚动视图
 @property (nonatomic, weak) UIPageControl *page; // 分页控件
@@ -168,11 +168,11 @@
 -(void)checkLoop {
     CGFloat currentX = self.myView.contentOffset.x;
     
-    if (currentX == 0.0) {
+    if (currentX <= 0.0) {
         float offset = kPicWidth * self.data.count;
         
         [self.myView setContentOffset:CGPointMake(offset, 0) animated:NO];
-    } else if (currentX == kPicWidth * (self.data.count + 1)) {
+    } else if (currentX >= kPicWidth * (self.data.count + 1)) {
         [self.myView setContentOffset:CGPointMake(kPicWidth, 0) animated:NO];
     }
 }

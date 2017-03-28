@@ -57,7 +57,7 @@ CGFloat const colCount = 3;
     
     // 确定cell的frame
     float top = [[_colArr objectAtIndex:col] floatValue];
-    CGRect frame = CGRectMake(edge.left + col + (edge.left + imgSize.width), top + edge.top, imgSize.width, imgSize.height);
+    CGRect frame = CGRectMake(edge.left + col * (edge.left + imgSize.width), top + edge.top, imgSize.width, imgSize.height);
     
     // 更新列高
     [_colArr replaceObjectAtIndex:col withObject:[NSNumber numberWithFloat:top + edge.top + imgSize.height]];
