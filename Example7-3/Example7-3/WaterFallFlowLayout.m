@@ -8,9 +8,11 @@
 
 #import "WaterFallFlowLayout.h"
 
-CGFloat const colCount = 3;
+#define colCount 3 // 定义列数
+
 @implementation WaterFallFlowLayout
-// 准备布局
+
+// 方法重写，准备布局
 -(void) prepareLayout {
     [super prepareLayout];
     
@@ -27,24 +29,20 @@ CGFloat const colCount = 3;
     }
     
     float top = 0;
+    
+    // 初始化
     for (int i = 0; i < colCount; i++) {
-        
         [_colArr addObject:[NSNumber numberWithFloat:top]];
     }
     
+    // 布局Cell
     for( int i = 0; i < _cellCount; i++) {
         [self layoutItemAtIndexPath:[NSIndexPath indexPathForItem:i inSection:0]];
     }
 }
 
-// 布避cell
--(void)layoutItemAtIndexPath:(NSIndexPath*)indexPath {
-    // 通过协议我得到cell的间隙
-    
-    UIEdgeInsets edge = [self.delegate collectionView:self.collectionView layout:self insetForSectionAtIndex:indexPath.row];
-    
-    CGSize imgSize = [self.delegate collectionView:self.collectionView layout:self sizeForItemAtIndexPath:indexPath];
-    
+// 计算最小高度的列
+- (float)colMinHeight {
     float col = 0;
     float shortHeight = [[_colArr objectAtIndex:col] floatValue];
     for (int i = 0; i < _colArr.count; i++) {
@@ -54,17 +52,31 @@ CGFloat const colCount = 3;
             col = i;
         }
     }
+  
+    return col;
+}
+
+// 布局cell
+-(void)layoutItemAtIndexPath:(NSIndexPath*)indexPath {
+    // 通过协议我得到cell的间隙
+    
+    UIEdgeInsets edge = [self.delegate collectionView:self.collectionView layout:self insetForSectionAtIndex:indexPath.row];
+    
+    CGSize size = [self.delegate collectionView:self.collectionView layout:self sizeForItemAtIndexPath:indexPath];
+    
+    float col = [self colMinHeight];
     
     // 确定cell的frame
     float top = [[_colArr objectAtIndex:col] floatValue];
-    CGRect frame = CGRectMake(edge.left + col * (edge.left + imgSize.width), top + edge.top, imgSize.width, imgSize.height);
+    CGRect frame = CGRectMake(col * (edge.left + size.width) + edge.left, top + edge.top, size.width, size.height);
     
     // 更新列高
-    [_colArr replaceObjectAtIndex:col withObject:[NSNumber numberWithFloat:top + edge.top + imgSize.height]];
+    [_colArr replaceObjectAtIndex:col withObject:[NSNumber numberWithFloat:top + edge.top + size.height]];
     
+    //每个cell的frame对应一个indexPath，放入字典中
     [_attributeDict setObject:indexPath forKey:NSStringFromCGRect(frame)];
 }
-
+//
 -(NSArray*) indexPathsOfItem:(CGRect)rect {
     NSMutableArray *array = [NSMutableArray array];
     for (NSString *rectStr in _attributeDict) {
@@ -75,12 +87,12 @@ CGFloat const colCount = 3;
             
             [array addObject:indexPath];
         }
-        
     }
+    
     return array;
 }
 
-// 返回cell的布局信息
+// 方法重写，返回cell的布局信息
 - (NSArray*)layoutAttributesForElementsInRect:(CGRect)rect {
     NSMutableArray *muArr = [NSMutableArray array];
     
@@ -94,7 +106,7 @@ CGFloat const colCount = 3;
     return muArr;
 }
 
-// 计算collection view的内容大小
+// 方法重写，计算collection view的内容大小
 -(CGSize) collectionViewContentSize {
     CGSize size = self.collectionView.frame.size;
     
@@ -110,5 +122,18 @@ CGFloat const colCount = 3;
     size.height = maxHeight;
     
     return size;
+}
+
+// 重写方法， <UICollectionViewLayout>
+-(UICollectionViewLayoutAttributes*)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath {
+    UICollectionViewLayoutAttributes *attributes = [UICollectionViewLayoutAttributes  layoutAttributesForCellWithIndexPath:indexPath];
+    
+    for (NSString *rectStr in _attributeDict) {
+        if (_attributeDict[rectStr] == indexPath) {
+            attributes.frame = CGRectFromString(rectStr);
+        }
+    }
+    
+    return attributes;
 }
 @end

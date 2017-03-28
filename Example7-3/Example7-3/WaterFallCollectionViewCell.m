@@ -12,7 +12,6 @@
 
 -(void)setImage:(UIImage *)image {
     
-    
     if (_image != image) {
         _image = image;
     }
@@ -20,6 +19,8 @@
     [self setNeedsDisplay];
 }
 
+#pragma mark <UIView>
+// 方法重写
 -(void)drawRect:(CGRect)rect {
     float newHeight = _image.size.height / _image.size.width * 150;
     

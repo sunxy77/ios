@@ -10,9 +10,8 @@
 #import "WaterFallFlowLayout.h"
 #import "WaterFallCollectionViewCell.h"
 
-CGFloat const kImgCount = 15; // 图片数量
- #define fImgWidth 150 // 图片宽度
-// #define fImgWidth [UIScreen mainScreen].bounds.size.width / 3 - 5 // 图片宽度
+#define kImgCount  15 // 图片数量
+#define fImgWidth ([UIScreen mainScreen].bounds.size.width - 20) / 3 // 图片宽度
 static NSString *identifier = @"collectionView"; // 标识符
 
 @interface ViewController ()
@@ -34,15 +33,16 @@ static NSString *identifier = @"collectionView"; // 标识符
     
     // 注册单元格
     [self.collectionView registerClass:[WaterFallCollectionViewCell class] forCellWithReuseIdentifier:identifier];
+    
     [self.view addSubview:self.collectionView];
 }
 
-
-#pragma mark
+#pragma mark <UICollectionViewDataSource>
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.imgArr.count;
 }
 
+#pragma mark <UICollectionViewDataSource>
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     WaterFallCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
@@ -62,6 +62,9 @@ static NSString *identifier = @"collectionView"; // 标识符
     return ret;
 }
 
+#pragma mark #UICollectionViewDataSource
+
+// 获取图片放缩后的尺寸
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     UIImage *img = self.imgArr[indexPath.item];
     float heigth = [self imgHeight:img.size.height width:img.size.width];
@@ -69,6 +72,8 @@ static NSString *identifier = @"collectionView"; // 标识符
     return CGSizeMake(fImgWidth, heigth);
 }
 
+#pragma mark #UICollectionViewDataSource
+// 设置每个Cell的边距
 -(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
     
     UIEdgeInsets ret = {5, 5, 5, 5};
@@ -76,6 +81,7 @@ static NSString *identifier = @"collectionView"; // 标识符
     return ret;
 }
 
+// 懒加载
 -(NSArray*)imgArr {
     
     if (_imgArr == nil) {
@@ -88,7 +94,6 @@ static NSString *identifier = @"collectionView"; // 标识符
         }
         
         _imgArr = muArr;
-        
     }
     
     return _imgArr;
@@ -98,6 +103,5 @@ static NSString *identifier = @"collectionView"; // 标识符
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 @end
