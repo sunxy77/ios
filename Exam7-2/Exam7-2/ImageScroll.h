@@ -8,7 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ImageScroll : NSObject
+@interface ImageScroll : UIView
 
--(void)execute:(UIScrollView*)view page:(UIPageControl*)page;
+-(instancetype)initWithFrame:(CGRect)frame data:(NSArray*)data ti:(NSTimeInterval)ti; // 初始化
+-(void)on_timer; // 启动定时器
+-(void)off_timer; // 停止定时器
 @end

@@ -9,12 +9,9 @@
 #import "ViewController.h"
 #import "ImageScroll.h"
 
-#define kPicCount 4 // 图片数量
-#define kPicWidth [UIScreen mainScreen].bounds.size.width // 图片宽度
-#define kPicHeight [UIScreen mainScreen].bounds.size.height // Scroll视图高度
+#define kPicCount 6 // 图片数量
 
 @interface ViewController ()
-@property (weak, nonatomic) IBOutlet UIPageControl *page; // 分页控件
 @end
 
 @implementation ViewController
@@ -23,21 +20,32 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    // 分页控件图层置前
-    [self.view bringSubviewToFront:self.page];
+//    NSArray *arr;
+    
+//    NSArray *arr = [[NSArray alloc] initWithObjects:@"1.jpg", @"4.jpg", @"6.jpg", nil];
+//    NSArray *arr = [[NSArray alloc] initWithObjects:@"1.jpg", @"6.jpg", nil];
+    
+    NSArray *arr = [self createArray];
     
     // 创建滚动实现对象
-    ImageScroll *imageScroll = [[ImageScroll alloc] init];
+    ImageScroll *myview = [[ImageScroll alloc] initWithFrame:self.view.bounds data:arr ti:2.0];
     
-    // 创建滚动视图
-    UIScrollView *view = [[UIScrollView alloc] initWithFrame:self.view.bounds];
+    if (myview) {
+        [self.view addSubview:myview];
+    }
     
-    view.contentSize = CGSizeMake((kPicCount+2)*kPicWidth, kPicHeight);
-    [view setContentOffset:CGPointMake(kPicWidth, 0) animated:NO];
+}
+
+-(NSArray*)createArray {
+    NSMutableArray *muArr = [NSMutableArray array];
     
-    [self.view addSubview:view];
+    for (int i = 1; i <= kPicCount; i++) {
+        NSString *strName = [NSString stringWithFormat:@"%d.jpg", i];
+        
+        [muArr addObject:strName];
+    }
     
-    [imageScroll execute:view page:self.page];
+    return muArr;
 }
 
 - (void)didReceiveMemoryWarning {
