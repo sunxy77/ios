@@ -1,27 +1,22 @@
 //
-//  RedViewController.m
-//  Example8-4
+//  AddressController.m
+//  Exam8-1
 //
 //  Created by 孙晓晔 on 2017/3/29.
 //  Copyright © 2017年 孙晓晔. All rights reserved.
 //
 
-#import "RedViewController.h"
+#import "AddressController.h"
 
-@interface RedViewController ()
+@interface AddressController ()
 
 @end
 
-@implementation RedViewController
+@implementation AddressController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    self.tabBarItem.title = @"微信";
-    // self.tabBarItem.image = [UIImage imageNamed:@"6.jpg"];
-    
-    NSLog(@"红色");
 }
 
 - (void)didReceiveMemoryWarning {

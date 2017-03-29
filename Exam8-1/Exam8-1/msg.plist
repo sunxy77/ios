@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>pic</key>
+		<string>1.jpg</string>
+		<key>name</key>
+		<string>张学友</string>
+		<key>msg</key>
+		<string>相信了你的承诺　让爱蒙蔽我的眼塞纳河的光线　照不亮心的那边</string>
+	</dict>
+	<dict>
+		<key>pic</key>
+		<string>2.jpg</string>
+		<key>name</key>
+		<string>张国荣</string>
+		<key>msg</key>
+		<string>背叛的终点线索己那么明显　你的爱是欺骗我在一千零一夜　守着错误的签</string>
+	</dict>
+	<dict>
+		<key>pic</key>
+		<string>3.jpg</string>
+		<key>name</key>
+		<string>周杰伦</string>
+		<key>msg</key>
+		<string>真相似毒刺漫延　心被扎得出血你和我的爱之间　主角是背叛</string>
+	</dict>
+	<dict>
+		<key>pic</key>
+		<string>4.jpg</string>
+		<key>name</key>
+		<string>邓丽君</string>
+		<key>msg</key>
+		<string>虚伪的表演在塞纳河上的玫瑰　它的养份是我的泪花瓣的颜色愈妖艳　我郤愈憔悴</string>
+	</dict>
+	<dict>
+		<key>pic</key>
+		<string>5.jpg</string>
+		<key>name</key>
+		<string>邓紫琪</string>
+		<key>msg</key>
+		<string>你对爱并不了解　误会爱的分类把最珍贵的玫瑰　当作荒野蔷薇
+</string>
+	</dict>
+	<dict>
+		<key>pic</key>
+		<string>6.jpg</string>
+		<key>name</key>
+		<string>汪峰</string>
+		<key>msg</key>
+		<string>发现了自己信仰的依赖　逐渐瓦解永远在瞬间被毁灭线索己那么明显　你的爱是欺骗</string>
+	</dict>
+</array>
+</plist>

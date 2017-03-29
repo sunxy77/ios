@@ -1,13 +1,12 @@
 //
 //  AppDelegate.m
-//  Example8-4
+//  Exam8-1
 //
 //  Created by 孙晓晔 on 2017/3/29.
 //  Copyright © 2017年 孙晓晔. All rights reserved.
 //
 
 #import "AppDelegate.h"
-#import "myTabBarController.h"
 
 @interface AppDelegate ()
 
@@ -18,35 +17,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
-    
-    
     return YES;
 }
 
--(void)abc {
-    myTabBarController *myController = [[myTabBarController alloc] init];
-    
-    UIViewController *c1 = [[UIViewController alloc] init];
-    c1.view.backgroundColor = [UIColor redColor];
-    
-    [myController addChildViewController:c1];
-    
-    UIViewController *c2 = [[UIViewController alloc] init];
-    c2.view.backgroundColor = [UIColor greenColor];
-    
-    [myController addChildViewController:c2];
-    
-    UIViewController *c3 = [[UIViewController alloc] init];
-    c3.view.backgroundColor = [UIColor yellowColor];
-    
-    [myController addChildViewController:c3];
-    
-    [myController initTabBar];
-    
-    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.rootViewController = myController;
-}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
