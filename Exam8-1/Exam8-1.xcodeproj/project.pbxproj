@@ -123,6 +123,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AE09C6561E8D3E5700EBC584 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AE70E2151E8BAB9800164798 /* WeixinController.h */,
+				AE70E2161E8BAB9800164798 /* WeixinController.m */,
+				AE70E2181E8BABA700164798 /* AddressController.h */,
+				AE70E2191E8BABA700164798 /* AddressController.m */,
+				AE70E21B1E8BABC300164798 /* DiscoverController.h */,
+				AE70E21C1E8BABC300164798 /* DiscoverController.m */,
+				AE70E21E1E8BABD600164798 /* MyController.h */,
+				AE70E21F1E8BABD600164798 /* MyController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		AE09C6571E8D3E8100EBC584 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AE09C5DC1E8C92D600EBC584 /* Vcard.h */,
+				AE09C5DD1E8C92D600EBC584 /* Vcard.m */,
+				AE70E2421E8BC35400164798 /* Message.h */,
+				AE70E2431E8BC35400164798 /* Message.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		AE09C6581E8D3E9600EBC584 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AE09C5F51E8CDCFA00EBC584 /* VcardCell.h */,
+				AE09C5F61E8CDCFA00EBC584 /* VcardCell.m */,
+				AE70E23D1E8BC2D400164798 /* MessageCell.h */,
+				AE70E23E1E8BC2D400164798 /* MessageCell.m */,
+				AE70E23F1E8BC2D400164798 /* MessageCell.xib */,
+				AE70E2481E8BF7E300164798 /* MyCell.h */,
+				AE70E2491E8BF7E300164798 /* MyCell.m */,
+				AE70E24A1E8BF7E300164798 /* MyCell.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		AE70E1EF1E8BA11800164798 = {
 			isa = PBXGroup;
 			children = (
@@ -142,19 +183,9 @@
 		AE70E1FA1E8BA11800164798 /* Exam8-1 */ = {
 			isa = PBXGroup;
 			children = (
-				AE70E2151E8BAB9800164798 /* WeixinController.h */,
-				AE70E2161E8BAB9800164798 /* WeixinController.m */,
-				AE70E2181E8BABA700164798 /* AddressController.h */,
-				AE70E2191E8BABA700164798 /* AddressController.m */,
-				AE70E21B1E8BABC300164798 /* DiscoverController.h */,
-				AE70E21C1E8BABC300164798 /* DiscoverController.m */,
-				AE70E21E1E8BABD600164798 /* MyController.h */,
-				AE70E21F1E8BABD600164798 /* MyController.m */,
-				AE70E23D1E8BC2D400164798 /* MessageCell.h */,
-				AE70E23E1E8BC2D400164798 /* MessageCell.m */,
-				AE70E23F1E8BC2D400164798 /* MessageCell.xib */,
-				AE70E2421E8BC35400164798 /* Message.h */,
-				AE70E2431E8BC35400164798 /* Message.m */,
+				AE09C6581E8D3E9600EBC584 /* View */,
+				AE09C6571E8D3E8100EBC584 /* Model */,
+				AE09C6561E8D3E5700EBC584 /* Controller */,
 				AE70E2121E8BA7A400164798 /* MyTabBarController.h */,
 				AE70E2131E8BA7A400164798 /* MyTabBarController.m */,
 				AE70E1FE1E8BA11800164798 /* AppDelegate.h */,
@@ -166,13 +197,6 @@
 				AE70E2091E8BA11800164798 /* LaunchScreen.storyboard */,
 				AE70E20C1E8BA11800164798 /* Info.plist */,
 				AE70E1FB1E8BA11800164798 /* Supporting Files */,
-				AE70E2481E8BF7E300164798 /* MyCell.h */,
-				AE70E2491E8BF7E300164798 /* MyCell.m */,
-				AE70E24A1E8BF7E300164798 /* MyCell.xib */,
-				AE09C5DC1E8C92D600EBC584 /* Vcard.h */,
-				AE09C5DD1E8C92D600EBC584 /* Vcard.m */,
-				AE09C5F51E8CDCFA00EBC584 /* VcardCell.h */,
-				AE09C5F61E8CDCFA00EBC584 /* VcardCell.m */,
 			);
 			path = "Exam8-1";
 			sourceTree = "<group>";
