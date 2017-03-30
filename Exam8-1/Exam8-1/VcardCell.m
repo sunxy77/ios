@@ -10,14 +10,18 @@
 
 @implementation VcardCell
 
+#pragma mark - UIView
 -(void)layoutSubviews {
     [super layoutSubviews];
     
+    // 图片定位
     [self.imageView setFrame:CGRectMake(8, 8, 44, 44)];
     self.imageView.contentMode = UIViewContentModeScaleAspectFit;
     
+    // 文本标签定位
     [self.textLabel setFrame:CGRectMake(70, 8, 100, 44)];
     
+    // 下划线边距设置
     [self setSeparatorInset:UIEdgeInsetsMake(0, 15, 0, 0)];
     
     [self setLayoutMargins:UIEdgeInsetsZero];
