@@ -9,7 +9,7 @@
 #import "MyController.h"
 #import "MyCell.h"
 
-@interface MyController ()<UITableViewDataSource>
+@interface MyController ()
 
 @end
 
@@ -36,10 +36,15 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     
     if (section == 0) {
-        return 10;
+        return 15;
     }
     
-    return 20;
+    return 0;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    
+    return 0;
 }
 
 #pragma mark - UITableViewDataSource
@@ -84,13 +89,15 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:strIndetifier];
     }
     
+    [cell setSeparatorInset:UIEdgeInsetsMake(0, 15, 0, 0)];
+    
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     if (indexPath.section == 0) {
         MyCell *mycell = [[[NSBundle mainBundle] loadNibNamed:@"MyCell" owner:nil options:nil] firstObject];
         
         mycell.frame = CGRectMake(5, 5, tableView.bounds.size.width - 10, mycell.frame.size.height);
-        mycell.detail.frame = CGRectMake(mycell.frame.size.width - 45, 20, 40, 40);
+        mycell.detail.frame = CGRectMake(mycell.frame.size.width - 45, 10, 40, 40);
         
         mycell.photo.layer.cornerRadius = 8;
         mycell.photo.layer.masksToBounds = YES;
@@ -120,31 +127,23 @@
     return cell;
 }
 
--(void)section_0:(UITableViewCell*)cell cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    cell.textLabel.text = @"孙晓晔";
-//    cell.imageView.image = [UIImage imageNamed:@"1.jpg"];
-//    cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
-    
-    
-}
-
 -(void)section_1:(UITableViewCell*)cell cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     switch (indexPath.row) {
         case 0:
             cell.textLabel.text = @"相册";
-            cell.imageView.image = [UIImage imageNamed:@"2.jpg"];
+            cell.imageView.image = [UIImage imageNamed:@"a"];
             break;
         case 1:
             cell.textLabel.text = @"收藏";
-            cell.imageView.image = [UIImage imageNamed:@"3.jpg"];
+            cell.imageView.image = [UIImage imageNamed:@"b"];
             break;
         case 2:
             cell.textLabel.text = @"钱包";
-            cell.imageView.image = [UIImage imageNamed:@"4.jpg"];
+            cell.imageView.image = [UIImage imageNamed:@"c"];
             break;
         case 3:
             cell.textLabel.text = @"卡包";
-            cell.imageView.image = [UIImage imageNamed:@"5.jpg"];
+            cell.imageView.image = [UIImage imageNamed:@"d"];
             break;
         default:
             break;
@@ -153,12 +152,12 @@
 
 -(void)section_2:(UITableViewCell*)cell cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     cell.textLabel.text = @"表情";
-    cell.imageView.image = [UIImage imageNamed:@"6.jpg"];
+    cell.imageView.image = [UIImage imageNamed:@"e"];
 }
 
 -(void)section_3:(UITableViewCell*)cell cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     cell.textLabel.text = @"设置";
-    cell.imageView.image = [UIImage imageNamed:@"7.jpg"];
+    cell.imageView.image = [UIImage imageNamed:@"f"];
 }
 
 - (void)didReceiveMemoryWarning {

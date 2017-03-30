@@ -22,11 +22,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-//    self.tabBarItem.title = @"weixin";
-    
     [self myView];
 }
 
+// 懒加载
 -(UITableView*)myView {
     
     if (_myView == nil) {
@@ -64,7 +63,7 @@
 
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 60;
+    return 70;
 }
 
 #pragma mark - UITableViewDataSource
@@ -81,8 +80,8 @@
     if (cell == nil) {
         cell = [[[NSBundle mainBundle] loadNibNamed:@"MessageCell" owner:nil options:nil] firstObject];
         
-        cell.frame = CGRectMake(5, 5, tableView.bounds.size.width - 10, cell.frame.size.height);
-        cell.msg.frame = CGRectMake(67, 33, tableView.bounds.size.width - 75, cell.msg.frame.size.height);
+        cell.frame = CGRectMake(8, 8, tableView.bounds.size.width - 16, cell.frame.size.height);
+        cell.msg.frame = CGRectMake(72, 38, tableView.bounds.size.width - 75, cell.msg.frame.size.height);
         cell.pic.layer.cornerRadius = 8;
         cell.pic.layer.masksToBounds = YES;
         

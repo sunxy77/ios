@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE09C5DE1E8C92D600EBC584 /* Vcard.m in Sources */ = {isa = PBXBuildFile; fileRef = AE09C5DD1E8C92D600EBC584 /* Vcard.m */; };
+		AE09C5E91E8C947F00EBC584 /* 14.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE09C5DF1E8C947F00EBC584 /* 14.jpg */; };
+		AE09C5EA1E8C947F00EBC584 /* 15.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE09C5E01E8C947F00EBC584 /* 15.jpg */; };
+		AE09C5EB1E8C947F00EBC584 /* 16.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE09C5E11E8C947F00EBC584 /* 16.jpg */; };
+		AE09C5EC1E8C947F00EBC584 /* 17.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE09C5E21E8C947F00EBC584 /* 17.jpg */; };
+		AE09C5ED1E8C947F00EBC584 /* 18.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE09C5E31E8C947F00EBC584 /* 18.jpg */; };
+		AE09C5EE1E8C947F00EBC584 /* 19.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE09C5E41E8C947F00EBC584 /* 19.jpg */; };
+		AE09C5EF1E8C947F00EBC584 /* 20.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE09C5E51E8C947F00EBC584 /* 20.jpg */; };
+		AE09C5F01E8C947F00EBC584 /* 21.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE09C5E61E8C947F00EBC584 /* 21.jpg */; };
+		AE09C5F11E8C947F00EBC584 /* 22.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE09C5E71E8C947F00EBC584 /* 22.jpg */; };
+		AE09C5F21E8C947F00EBC584 /* 23.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE09C5E81E8C947F00EBC584 /* 23.jpg */; };
+		AE09C5F41E8C974900EBC584 /* address.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE09C5F31E8C974900EBC584 /* address.plist */; };
+		AE09C5F71E8CDCFA00EBC584 /* VcardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AE09C5F61E8CDCFA00EBC584 /* VcardCell.m */; };
 		AE70E1FD1E8BA11800164798 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AE70E1FC1E8BA11800164798 /* main.m */; };
 		AE70E2001E8BA11800164798 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AE70E1FF1E8BA11800164798 /* AppDelegate.m */; };
 		AE70E2031E8BA11800164798 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE70E2021E8BA11800164798 /* ViewController.m */; };
@@ -40,6 +53,21 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AE09C5DC1E8C92D600EBC584 /* Vcard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vcard.h; sourceTree = "<group>"; };
+		AE09C5DD1E8C92D600EBC584 /* Vcard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vcard.m; sourceTree = "<group>"; };
+		AE09C5DF1E8C947F00EBC584 /* 14.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 14.jpg; sourceTree = "<group>"; };
+		AE09C5E01E8C947F00EBC584 /* 15.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 15.jpg; sourceTree = "<group>"; };
+		AE09C5E11E8C947F00EBC584 /* 16.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 16.jpg; sourceTree = "<group>"; };
+		AE09C5E21E8C947F00EBC584 /* 17.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 17.jpg; sourceTree = "<group>"; };
+		AE09C5E31E8C947F00EBC584 /* 18.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 18.jpg; sourceTree = "<group>"; };
+		AE09C5E41E8C947F00EBC584 /* 19.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 19.jpg; sourceTree = "<group>"; };
+		AE09C5E51E8C947F00EBC584 /* 20.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 20.jpg; sourceTree = "<group>"; };
+		AE09C5E61E8C947F00EBC584 /* 21.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 21.jpg; sourceTree = "<group>"; };
+		AE09C5E71E8C947F00EBC584 /* 22.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 22.jpg; sourceTree = "<group>"; };
+		AE09C5E81E8C947F00EBC584 /* 23.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 23.jpg; sourceTree = "<group>"; };
+		AE09C5F31E8C974900EBC584 /* address.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = address.plist; sourceTree = "<group>"; };
+		AE09C5F51E8CDCFA00EBC584 /* VcardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VcardCell.h; sourceTree = "<group>"; };
+		AE09C5F61E8CDCFA00EBC584 /* VcardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VcardCell.m; sourceTree = "<group>"; };
 		AE70E1F81E8BA11800164798 /* Exam8-1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Exam8-1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE70E1FC1E8BA11800164798 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AE70E1FE1E8BA11800164798 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -141,6 +169,10 @@
 				AE70E2481E8BF7E300164798 /* MyCell.h */,
 				AE70E2491E8BF7E300164798 /* MyCell.m */,
 				AE70E24A1E8BF7E300164798 /* MyCell.xib */,
+				AE09C5DC1E8C92D600EBC584 /* Vcard.h */,
+				AE09C5DD1E8C92D600EBC584 /* Vcard.m */,
+				AE09C5F51E8CDCFA00EBC584 /* VcardCell.h */,
+				AE09C5F61E8CDCFA00EBC584 /* VcardCell.m */,
 			);
 			path = "Exam8-1";
 			sourceTree = "<group>";
@@ -148,6 +180,17 @@
 		AE70E1FB1E8BA11800164798 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AE09C5F31E8C974900EBC584 /* address.plist */,
+				AE09C5DF1E8C947F00EBC584 /* 14.jpg */,
+				AE09C5E01E8C947F00EBC584 /* 15.jpg */,
+				AE09C5E11E8C947F00EBC584 /* 16.jpg */,
+				AE09C5E21E8C947F00EBC584 /* 17.jpg */,
+				AE09C5E31E8C947F00EBC584 /* 18.jpg */,
+				AE09C5E41E8C947F00EBC584 /* 19.jpg */,
+				AE09C5E51E8C947F00EBC584 /* 20.jpg */,
+				AE09C5E61E8C947F00EBC584 /* 21.jpg */,
+				AE09C5E71E8C947F00EBC584 /* 22.jpg */,
+				AE09C5E81E8C947F00EBC584 /* 23.jpg */,
 				AE70E2231E8BC03800164798 /* 1.jpg */,
 				AE70E2241E8BC03800164798 /* 2.jpg */,
 				AE70E2251E8BC03800164798 /* 3.jpg */,
@@ -226,24 +269,35 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE70E23A1E8BC03800164798 /* 11.jpg in Resources */,
+				AE09C5EB1E8C947F00EBC584 /* 16.jpg in Resources */,
 				AE70E2381E8BC03800164798 /* 9.jpg in Resources */,
+				AE09C5F01E8C947F00EBC584 /* 21.jpg in Resources */,
+				AE09C5E91E8C947F00EBC584 /* 14.jpg in Resources */,
 				AE70E2371E8BC03800164798 /* 8.jpg in Resources */,
 				AE70E2361E8BC03800164798 /* 7.jpg in Resources */,
 				AE70E2331E8BC03800164798 /* 4.jpg in Resources */,
 				AE70E23C1E8BC03800164798 /* 13.jpg in Resources */,
 				AE70E2311E8BC03800164798 /* 2.jpg in Resources */,
 				AE70E20B1E8BA11800164798 /* LaunchScreen.storyboard in Resources */,
+				AE09C5F41E8C974900EBC584 /* address.plist in Resources */,
 				AE70E2341E8BC03800164798 /* 5.jpg in Resources */,
 				AE70E23B1E8BC03800164798 /* 12.jpg in Resources */,
+				AE09C5EE1E8C947F00EBC584 /* 19.jpg in Resources */,
 				AE70E2351E8BC03800164798 /* 6.jpg in Resources */,
 				AE70E2391E8BC03800164798 /* 10.jpg in Resources */,
 				AE70E2081E8BA11800164798 /* Assets.xcassets in Resources */,
 				AE70E2411E8BC2D400164798 /* MessageCell.xib in Resources */,
 				AE70E24C1E8BF7E300164798 /* MyCell.xib in Resources */,
+				AE09C5F21E8C947F00EBC584 /* 23.jpg in Resources */,
 				AE70E2221E8BBF6500164798 /* msg.plist in Resources */,
 				AE70E2061E8BA11800164798 /* Main.storyboard in Resources */,
+				AE09C5ED1E8C947F00EBC584 /* 18.jpg in Resources */,
 				AE70E2321E8BC03800164798 /* 3.jpg in Resources */,
+				AE09C5EC1E8C947F00EBC584 /* 17.jpg in Resources */,
 				AE70E2301E8BC03800164798 /* 1.jpg in Resources */,
+				AE09C5F11E8C947F00EBC584 /* 22.jpg in Resources */,
+				AE09C5EA1E8C947F00EBC584 /* 15.jpg in Resources */,
+				AE09C5EF1E8C947F00EBC584 /* 20.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,9 +311,11 @@
 				AE70E2171E8BAB9800164798 /* WeixinController.m in Sources */,
 				AE70E2031E8BA11800164798 /* ViewController.m in Sources */,
 				AE70E2141E8BA7A400164798 /* MyTabBarController.m in Sources */,
+				AE09C5F71E8CDCFA00EBC584 /* VcardCell.m in Sources */,
 				AE70E2201E8BABD600164798 /* MyController.m in Sources */,
 				AE70E21D1E8BABC300164798 /* DiscoverController.m in Sources */,
 				AE70E2001E8BA11800164798 /* AppDelegate.m in Sources */,
+				AE09C5DE1E8C92D600EBC584 /* Vcard.m in Sources */,
 				AE70E2401E8BC2D400164798 /* MessageCell.m in Sources */,
 				AE70E24B1E8BF7E300164798 /* MyCell.m in Sources */,
 				AE70E2441E8BC35400164798 /* Message.m in Sources */,

@@ -20,7 +20,6 @@
     self.name.text = name;
     
     self.account.text = account;
-    
 }
 
 - (void)awakeFromNib {

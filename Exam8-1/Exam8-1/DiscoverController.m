@@ -8,7 +8,7 @@
 
 #import "DiscoverController.h"
 
-@interface DiscoverController ()<UITableViewDataSource>
+@interface DiscoverController ()
 
 @end
 
@@ -25,10 +25,10 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     
     if (section == 0) {
-        return 10;
+        return 15;
     }
     
-    return 20;
+    return 0;
 }
 
 #pragma mark - UITableViewDataSource
@@ -54,9 +54,9 @@
     if (cell == nil) {
         
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:strIndetifier];
-    } else {
-        NSLog(@"cell 重用");
     }
+    
+    [cell setSeparatorInset:UIEdgeInsetsMake(0, 15, 0, 0)];
     
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
@@ -86,18 +86,18 @@
 
 -(void)section_0:(UITableViewCell*)cell cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     cell.textLabel.text = @"朋友圈";
-    cell.imageView.image = [UIImage imageNamed:@"1.jpg"];
+    cell.imageView.image = [UIImage imageNamed:@"a"];
 }
 
 -(void)section_1:(UITableViewCell*)cell cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     switch (indexPath.row) {
         case 0:
             cell.textLabel.text = @"扫一扫";
-            cell.imageView.image = [UIImage imageNamed:@"4.jpg"];
+            cell.imageView.image = [UIImage imageNamed:@"b"];
             break;
         case 1:
             cell.textLabel.text = @"摇一摇";
-            cell.imageView.image = [UIImage imageNamed:@"5.jpg"];
+            cell.imageView.image = [UIImage imageNamed:@"c"];
             
         default:
             break;
@@ -108,11 +108,11 @@
     switch (indexPath.row) {
         case 0:
             cell.textLabel.text = @"附近的人";
-            cell.imageView.image = [UIImage imageNamed:@"4.jpg"];
+            cell.imageView.image = [UIImage imageNamed:@"d"];
             break;
         case 1:
             cell.textLabel.text = @"漂流瓶";
-            cell.imageView.image = [UIImage imageNamed:@"5.jpg"];
+            cell.imageView.image = [UIImage imageNamed:@"e"];
             
         default:
             break;
@@ -123,11 +123,11 @@
     switch (indexPath.row) {
         case 0:
             cell.textLabel.text = @"购物";
-            cell.imageView.image = [UIImage imageNamed:@"4.jpg"];
+            cell.imageView.image = [UIImage imageNamed:@"f"];
             break;
         case 1:
             cell.textLabel.text = @"游戏";
-            cell.imageView.image = [UIImage imageNamed:@"5.jpg"];
+            cell.imageView.image = [UIImage imageNamed:@"g"];
             
         default:
             break;
