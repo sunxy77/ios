@@ -10,4 +10,17 @@
 
 @implementation Vcard
 
+-(instancetype)initWithDict:(NSDictionary*)dict {
+    self = [super init];
+    
+    if (self) {
+        [self setValuesForKeysWithDictionary:dict];
+    }
+    
+    return self;
+}
+
++(instancetype)vcardWithDict:(NSDictionary*)dict {
+    return [[Vcard alloc]initWithDict:dict];
+}
 @end

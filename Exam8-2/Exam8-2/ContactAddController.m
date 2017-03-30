@@ -7,7 +7,6 @@
 //
 
 #import "ContactAddController.h"
-#import "ContactController.h"
 #import "Vcard.h"
 
 @interface ContactAddController ()
@@ -33,26 +32,28 @@
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-    
-    ContactController *dest = segue.destinationViewController;
-//    dest.navigationItem.title = [NSString stringWithFormat:@"%@联系列表",self.account.text];
-    
-//    dest.vcard.accessibilityActivationPoint
-    
-//    NSNotificationCenter *notify = [NSNotificationCenter defaultCenter];
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+//    // Get the new view controller using [segue destinationViewController].
+//    // Pass the selected object to the new view controller.
 //    
-//    [notify addObserver:dest selector:@selector(printName:) name: @"messageName" object:nil];
-    
-}
+//}
 
 - (IBAction)add:(UIButton *)sender {
     self.vcard.name = self.name.text;
     self.vcard.tel = self.tel.text;
     
-    [self performSegueWithIdentifier:@"add2contact" sender:nil];
+    //1.关闭当前视图控制器
+    [self.navigationController popViewControllerAnimated:YES];
+    
+    //代理传值
+    if ([self.delegate respondsToSelector:@selector(addVcard:vcard:)]) {
+        Vcard *vcard = [[Vcard alloc] init];
+        
+        vcard.name = self.name.text;
+        vcard.tel = self.tel.text;
+        
+        [self.delegate addVcard:self vcard:vcard];
+    }
 }
 
 

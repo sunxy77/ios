@@ -75,6 +75,8 @@
 		AE09C6291E8D0D1100EBC584 /* Exam8-2 */ = {
 			isa = PBXGroup;
 			children = (
+				AE09C65A1E8D4BBB00EBC584 /* Model */,
+				AE09C6591E8D4B9000EBC584 /* Controller */,
 				AE09C62D1E8D0D1100EBC584 /* AppDelegate.h */,
 				AE09C62E1E8D0D1100EBC584 /* AppDelegate.m */,
 				AE09C6301E8D0D1100EBC584 /* ViewController.h */,
@@ -84,16 +86,6 @@
 				AE09C6381E8D0D1100EBC584 /* LaunchScreen.storyboard */,
 				AE09C63B1E8D0D1100EBC584 /* Info.plist */,
 				AE09C62A1E8D0D1100EBC584 /* Supporting Files */,
-				AE09C6411E8D0D9B00EBC584 /* LoginController.h */,
-				AE09C6421E8D0D9B00EBC584 /* LoginController.m */,
-				AE09C6481E8D11FB00EBC584 /* ContactController.h */,
-				AE09C6491E8D11FB00EBC584 /* ContactController.m */,
-				AE09C64B1E8D1ECD00EBC584 /* ContactAddController.h */,
-				AE09C64C1E8D1ECD00EBC584 /* ContactAddController.m */,
-				AE09C64E1E8D1EDF00EBC584 /* ContactEditController.h */,
-				AE09C64F1E8D1EDF00EBC584 /* ContactEditController.m */,
-				AE09C6511E8D23A000EBC584 /* Vcard.h */,
-				AE09C6521E8D23A000EBC584 /* Vcard.m */,
 			);
 			path = "Exam8-2";
 			sourceTree = "<group>";
@@ -105,6 +97,30 @@
 				AE09C62B1E8D0D1100EBC584 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AE09C6591E8D4B9000EBC584 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AE09C6411E8D0D9B00EBC584 /* LoginController.h */,
+				AE09C6421E8D0D9B00EBC584 /* LoginController.m */,
+				AE09C6481E8D11FB00EBC584 /* ContactController.h */,
+				AE09C6491E8D11FB00EBC584 /* ContactController.m */,
+				AE09C64B1E8D1ECD00EBC584 /* ContactAddController.h */,
+				AE09C64C1E8D1ECD00EBC584 /* ContactAddController.m */,
+				AE09C64E1E8D1EDF00EBC584 /* ContactEditController.h */,
+				AE09C64F1E8D1EDF00EBC584 /* ContactEditController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		AE09C65A1E8D4BBB00EBC584 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AE09C6511E8D23A000EBC584 /* Vcard.h */,
+				AE09C6521E8D23A000EBC584 /* Vcard.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

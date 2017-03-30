@@ -11,4 +11,7 @@
 @interface Vcard : NSObject
 @property(nonatomic,strong) NSString *name;
 @property(nonatomic,strong) NSString *tel;
+
+-(instancetype)initWithDict:(NSDictionary*)dict;
++(instancetype)vcardWithDict:(NSDictionary*)dict;
 @end

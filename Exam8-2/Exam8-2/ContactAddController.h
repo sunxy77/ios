@@ -9,6 +9,18 @@
 #import <UIKit/UIKit.h>
 #import "Vcard.h"
 
+@class ContactAddController;
+
+@protocol ContactAddControllerDelegate <NSObject>
+
+@optional
+- (void)addVcard:(ContactAddController *)addController vcard:(Vcard *)vcard;
+
+@end
+
 @interface ContactAddController : UIViewController
 @property(nonatomic, strong) Vcard *vcard;
+@property (nonatomic, assign) id<ContactAddControllerDelegate> delegate;
+
 @end
+
