@@ -22,11 +22,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [self textchange];
+    [self onChange];
     
     NSNotificationCenter *notify = [NSNotificationCenter defaultCenter];
-    [notify addObserver:self selector:@selector(textchange) name:UITextFieldTextDidChangeNotification object:self.name];
-    [notify addObserver:self selector:@selector(textchange) name:UITextFieldTextDidChangeNotification object:self.tel];
+    [notify addObserver:self selector:@selector(onChange) name:UITextFieldTextDidChangeNotification object:self.name];
+    [notify addObserver:self selector:@selector(onChange) name:UITextFieldTextDidChangeNotification object:self.tel];
 }
 
 #pragma mark - NSObject
@@ -36,7 +36,7 @@
     [notify removeObserver:self name:UITextFieldTextDidChangeNotification object:self.tel];
 }
 
--(void)textchange {
+-(void)onChange {
     if (self.name.text.length > 0
         && self.tel.text.length > 0) {
         self.AddBtn.enabled = TRUE;

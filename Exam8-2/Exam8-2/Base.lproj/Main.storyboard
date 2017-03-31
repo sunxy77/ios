@@ -82,7 +82,7 @@
                         <outlet property="account" destination="XMz-YJ-eyH" id="wqe-st-9lU"/>
                         <outlet property="loginBtn" destination="82A-pf-4bN" id="JJd-M5-qyM"/>
                         <outlet property="password" destination="kM0-DU-lsJ" id="lzP-j9-djx"/>
-                        <segue destination="jAS-co-0a9" kind="push" identifier="login2contact" id="NiQ-Ah-vjJ"/>
+                        <segue destination="jAS-co-0a9" kind="show" identifier="login2contact" id="NiQ-Ah-vjJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -98,7 +98,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="iFx-MZ-Ggp">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="mycell" id="iFx-MZ-Ggp">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iFx-MZ-Ggp" id="IKn-Yg-9T2">
@@ -116,13 +116,13 @@
                     <navigationItem key="navigationItem" title="联系人列表" id="dVs-g8-SEm">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="DQq-oW-RVd">
                             <connections>
-                                <segue destination="njr-oq-cYa" kind="push" id="uBR-B3-kCe"/>
+                                <segue destination="njr-oq-cYa" kind="show" identifier="contact2add" id="uBR-B3-kCe"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <segue destination="Grh-Z9-Jpc" kind="push" identifier="contact2edit" id="puB-jG-lWN"/>
+                        <segue destination="Grh-Z9-Jpc" kind="show" identifier="contact2edit" id="puB-jG-lWN"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fqR-93-sS3" userLabel="First Responder" sceneMemberID="firstResponder"/>

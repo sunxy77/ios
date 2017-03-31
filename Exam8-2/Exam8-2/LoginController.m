@@ -20,11 +20,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self textchange];
+    [self onChange];
     
     NSNotificationCenter *notify = [NSNotificationCenter defaultCenter];
-    [notify addObserver:self selector:@selector(textchange) name:UITextFieldTextDidChangeNotification object:self.account];
-    [notify addObserver:self selector:@selector(textchange) name:UITextFieldTextDidChangeNotification object:self.password];
+    [notify addObserver:self selector:@selector(onChange) name:UITextFieldTextDidChangeNotification object:self.account];
+    [notify addObserver:self selector:@selector(onChange) name:UITextFieldTextDidChangeNotification object:self.password];
 }
 
 #pragma mark - NSObject
@@ -34,7 +34,7 @@
     [notify removeObserver:self name:UITextFieldTextDidChangeNotification object:self.password];
 }
 
--(void)textchange {
+-(void)onChange {
     if (self.account.text.length > 0
         && self.password.text.length > 0) {
         self.loginBtn.enabled = TRUE;
