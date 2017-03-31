@@ -21,13 +21,34 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [self textchange];
+    
+    NSNotificationCenter *notify = [NSNotificationCenter defaultCenter];
+    [notify addObserver:self selector:@selector(textchange) name:UITextFieldTextDidChangeNotification object:self.name];
+    [notify addObserver:self selector:@selector(textchange) name:UITextFieldTextDidChangeNotification object:self.tel];
+}
+
+#pragma mark - NSObject
+-(void)dealloc {
+    NSNotificationCenter *notify = [NSNotificationCenter defaultCenter];
+    [notify removeObserver:self name:UITextFieldTextDidChangeNotification object:self.name];
+    [notify removeObserver:self name:UITextFieldTextDidChangeNotification object:self.tel];
+}
+
+-(void)textchange {
+    if (self.name.text.length > 0
+        && self.tel.text.length > 0) {
+        self.AddBtn.enabled = TRUE;
+    } else {
+        self.AddBtn.enabled = FALSE;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 #pragma mark - Navigation
 
@@ -42,10 +63,10 @@
     self.vcard.name = self.name.text;
     self.vcard.tel = self.tel.text;
     
-    //1.关闭当前视图控制器
+    // 关闭当前视图
     [self.navigationController popViewControllerAnimated:YES];
     
-    //代理传值
+    // 代理传值
     if ([self.delegate respondsToSelector:@selector(addVcard:vcard:)]) {
         Vcard *vcard = [[Vcard alloc] init];
         
@@ -55,6 +76,5 @@
         [self.delegate addVcard:self vcard:vcard];
     }
 }
-
 
 @end

@@ -29,21 +29,20 @@
     [self vcardArr];
 }
 
+#pragma mark - ContactAddController
 - (void)addVcard:(ContactAddController *)addController vcard:(Vcard *)vcard {
  
-    NSLog(@"add....");
-    
-    //1.添加数据模型
+    // 添加数据模型
     [self.vcardArr addObject:vcard];
     
-    //2.刷新表视图
+    // 刷新表视图
     [self.tableView reloadData];
     
 }
 
+#pragma mark - ContactEditControllerDelegate
 - (void)editVcard:(ContactEditController *)editController vcard:(Vcard *)vcard {
-    NSLog(@"edit....");
-
+    
     [self.tableView reloadData];
 }
 
@@ -67,16 +66,6 @@
     return _vcardArr;
 }
 
- -(void)printName:(id)sender{
-     NSString *name = [[sender userInfo] objectForKey:@"name"];
-     
-     NSLog(@"name: %@",name);
-}
-
--(void)textchange {
-   
-}
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -96,15 +85,14 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"reuseIdentifier" forIndexPath:indexPath];
     
-    static NSString *strIdentifier = @"mycell";
+    static NSString *identifier = @"mycell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:strIdentifier];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     
-        if (cell == nil) {
+    if (cell == nil) {
         
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:strIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:identifier];
     }
     
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
@@ -116,69 +104,34 @@
     return cell;
 }
 
-// Override to support conditional editing of the table view.
+#pragma mark - UITableViewDataSource
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.
     return YES;
 }
 
+#pragma mark - UITableViewDelegate
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    // NSLog(@"你点击了%ld节%ld行",indexPath.section, indexPath.row);
     
     [self performSegueWithIdentifier:@"contact2edit" sender:nil];
 }
 
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-
 #pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
     
-    id dest = segue.destinationViewController;
-    if ([dest isKindOfClass:[ContactAddController class]]) {//如果是跳转到添加联系人控制器
-        //设置代理
-        ContactAddController *addController = dest;
-        addController.delegate = self;
-        
-    }else if ([dest isKindOfClass:[ContactEditController class]]){
-        ContactEditController *editController = dest;
+    NSString *str = segue.identifier;
+    
+    if ([str isEqualToString:@"contact2add"]) {
+        ContactAddController *add = segue.destinationViewController;
+        add.delegate = self;
+    } else if ([str isEqualToString:@"contact2edit"]) {
+        ContactEditController *edit = segue.destinationViewController;
         //取得选中的那一行
         NSIndexPath *path = [self.tableView indexPathForSelectedRow];
         
-        editController.vcard = self.vcardArr[path.row];
-        editController.delegate = self;
+        edit.delegate = self;
+        edit.vcard = self.vcardArr[path.row];
     }
 }
-
 
 @end
