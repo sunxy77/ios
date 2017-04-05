@@ -8,6 +8,9 @@
 
 #import "DownloadView.h"
 
+#define CENTER_X 75 // 圆心X坐标
+#define CENTER_Y 75 // 圆心Y坐标
+#define DIAMETER 50 // 圆半经
 
 @interface DownloadView()
 
@@ -19,29 +22,29 @@
     [super awakeFromNib];
     
     _angle = 0;
+    // 初始化Bezier对象
     self.path = [[UIBezierPath alloc] init];
     
-    float center_x = 75;
-    float center_y = 75;
-    CGPoint center = CGPointMake(center_x, center_y);
+    CGPoint center = CGPointMake(CENTER_X, CENTER_Y);
     
-    [self.path addArcWithCenter:center radius:50 startAngle:-M_PI/2 endAngle:M_PI*2-M_PI/2 clockwise:1];
+    [self.path addArcWithCenter:center radius:DIAMETER startAngle:-M_PI/2 endAngle:M_PI*2-M_PI/2 clockwise:1];
     CGPoint pos = self.path.currentPoint;
-    //
+    
+    // 偏移并绘制内圆
     [self.path addLineToPoint:CGPointMake(pos.x, pos.y+5)];
     
-    [self.path addArcWithCenter:center radius:45 startAngle:-M_PI/2 endAngle:-M_PI*2-M_PI/2 clockwise:0];
+    [self.path addArcWithCenter:center radius:DIAMETER-5 startAngle:-M_PI/2 endAngle:-M_PI*2-M_PI/2 clockwise:0];
 }
 
+// 根据已下载的进度绘制扇形
 -(void)download {
-    float center_x = 75;
-    float center_y = 75;
-    CGPoint center = CGPointMake(center_x, center_y);
+   
+    CGPoint center = CGPointMake(CENTER_X, CENTER_Y);
     
-    [self.path addArcWithCenter:center radius:45 startAngle:-M_PI/2 endAngle:self.angle-M_PI/2 clockwise:1];
+    [self.path addArcWithCenter:center radius:DIAMETER-5 startAngle:-M_PI/2 endAngle:self.angle-M_PI/2 clockwise:1];
     
     [self.path addLineToPoint:center];
-    [self.path addLineToPoint:CGPointMake(75, 25)];
+    [self.path addLineToPoint:CGPointMake(CENTER_X, CENTER_Y - DIAMETER)];
     
     _angle += M_PI / 36;
     
@@ -52,22 +55,8 @@
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect {
     // Drawing code
-    
-    [[UIColor redColor] setStroke];
-    
-//    [self.path stroke];
-    [self.path fill];
-}
 
--(void)aa {
-    CGContextRef cg = UIGraphicsGetCurrentContext();
-    
-    CGContextAddArc(cg, 75, 75, 50, -M_PI, M_PI/2, 0);
-    CGContextAddLineToPoint(cg, 75, 75);
-    
-    //    CGContextStrokePath(cg);
-    
-    CGContextFillPath(cg);
+    [self.path fill];
 }
 
 @end

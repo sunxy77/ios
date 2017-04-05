@@ -29,7 +29,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+//  定时器调用方法
 -(void)download {
+    
     if (self.myView.angle < M_PI*2) {
         [self.myView download];
     } else {
@@ -37,6 +39,5 @@
         self.statusLabel.text = @"下载完成";
     }
 }
-
 
 @end
