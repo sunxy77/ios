@@ -18,35 +18,42 @@
 
 @implementation DownloadView
 
+-(instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    
+    if (self) {
+        // 初始化Bezier对象
+        self.path = [[UIBezierPath alloc] init];
+        
+        CGPoint center = CGPointMake(CENTER_X, CENTER_Y);
+        
+        [self.path addArcWithCenter:center radius:DIAMETER startAngle:-M_PI/2 endAngle:M_PI*2-M_PI/2 clockwise:1];
+        CGPoint pos = self.path.currentPoint;
+        
+        // 偏移并绘制内圆
+        [self.path addLineToPoint:CGPointMake(pos.x, pos.y+5)];
+        
+        [self.path addArcWithCenter:center radius:DIAMETER-5 startAngle:-M_PI/2 endAngle:-M_PI*2-M_PI/2 clockwise:0];
+    }
+    
+    return self;
+}
+
 -(void)awakeFromNib {
     [super awakeFromNib];
     
-    _angle = 0;
-    // 初始化Bezier对象
-    self.path = [[UIBezierPath alloc] init];
     
-    CGPoint center = CGPointMake(CENTER_X, CENTER_Y);
-    
-    [self.path addArcWithCenter:center radius:DIAMETER startAngle:-M_PI/2 endAngle:M_PI*2-M_PI/2 clockwise:1];
-    CGPoint pos = self.path.currentPoint;
-    
-    // 偏移并绘制内圆
-    [self.path addLineToPoint:CGPointMake(pos.x, pos.y+5)];
-    
-    [self.path addArcWithCenter:center radius:DIAMETER-5 startAngle:-M_PI/2 endAngle:-M_PI*2-M_PI/2 clockwise:0];
 }
 
 // 根据已下载的进度绘制扇形
--(void)download {
+-(void)myDownload:(CGFloat)progress {
    
     CGPoint center = CGPointMake(CENTER_X, CENTER_Y);
     
-    [self.path addArcWithCenter:center radius:DIAMETER-5 startAngle:-M_PI/2 endAngle:self.angle-M_PI/2 clockwise:1];
+    [self.path addArcWithCenter:center radius:DIAMETER-5 startAngle:-M_PI/2 endAngle:progress-M_PI/2 clockwise:1];
     
     [self.path addLineToPoint:center];
     [self.path addLineToPoint:CGPointMake(CENTER_X, CENTER_Y - DIAMETER)];
-    
-    _angle += M_PI / 36;
     
     [self setNeedsDisplay];
 }
@@ -55,7 +62,7 @@
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect {
     // Drawing code
-
+    
     [self.path fill];
 }
 

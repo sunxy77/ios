@@ -10,10 +10,8 @@
 
 @interface DownloadView : UIView
 @property (nonatomic, strong) UIBezierPath *path;
-@property(nonatomic,assign) CGFloat angle;
-@property(nonatomic,assign) CGPoint pos;
-@property(nonatomic,assign) CGFloat diameter;
+@property(nonatomic,assign) CGFloat progress;
 
--(void)download;
+-(void)myDownload:(CGFloat)progress;
 
 @end
