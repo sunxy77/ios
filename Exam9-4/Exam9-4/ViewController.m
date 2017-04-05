@@ -26,6 +26,7 @@
     
 }
 
+// 点击启动或停止演示
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     
     if (self.timer == nil) {
