@@ -11,4 +11,7 @@
 @interface MyView : UIView
 @property (nonatomic, strong) UIBezierPath *path;
 @property(nonatomic) CGFloat lineWidth;
+
+-(void)clear;
+-(UIImage*)save;
 @end

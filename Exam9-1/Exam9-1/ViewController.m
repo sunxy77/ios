@@ -26,52 +26,51 @@
     self.myView.path.lineWidth = self.mySlider.value;
 }
 
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+// 调整线宽
 - (IBAction)onSlider:(UISlider *)sender {
     
     self.myView.path.lineWidth = self.mySlider.value;
-    [self.myView setNeedsDisplay];
 }
+
+// 清除
 - (IBAction)onClear:(UIButton *)sender {
-    [self.myView.path removeAllPoints];
-    [self.myView setNeedsDisplay];
+    [self.myView clear];
 }
+
+// 保存
 - (IBAction)onSave:(UIButton *)sender {
     
-    UIGraphicsBeginImageContext(CGSizeMake(self.myView.bounds.size.width, self.myView.bounds.size.height));
-    [self.myView drawViewHierarchyInRect:self.myView.bounds afterScreenUpdates:YES];
-    
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
+    UIImage *image = [self.myView save];
     
     UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), NULL);
     
 }
 
-- (void)image: (UIImage *) image didFinishSavingWithError: (NSError *) error contextInfo: (void *) contextInfo
-{
+- (void)image: (UIImage *) image didFinishSavingWithError: (NSError *) error contextInfo: (void *) contextInfo {
     NSString *msg = nil ;
     if(error != NULL){
         msg = @"保存图片失败" ;
     }else{
         msg = @"保存图片成功" ;
     }
-//    
-//    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:msg preferredStyle:UIAlertControllerStyleAlert];
-//    [self presentViewController:alert animated:true completion:nil];
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:msg preferredStyle: UIAlertControllerStyleAlert];
     
     [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        //点击按钮的响应事件；
+        // 点击按钮的响应事件；
     }]];
     
-    //弹出提示框；
+    // 弹出提示框；
     [self presentViewController:alert animated:true completion:nil];
+}
+
+-(void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
+    [self.myView setNeedsDisplay];
 }
 
 @end
