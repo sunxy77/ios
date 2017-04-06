@@ -9,9 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface DownloadView : UIView
-@property (nonatomic, strong) UIBezierPath *path;
+
 @property(nonatomic,assign) CGFloat progress;
 
+-(void)begin;
 -(void)myDownload:(CGFloat)progress;
 
 @end
