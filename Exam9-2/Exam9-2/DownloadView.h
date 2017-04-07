@@ -12,6 +12,7 @@
 
 @property(nonatomic,assign) CGFloat progress;
 
+-(instancetype)initWithFrame:(CGRect)frame logo:(NSString*)logo;
 -(void)begin;
 -(void)myDownload:(CGFloat)progress;
 

@@ -11,7 +11,8 @@
 
 @interface ViewController ()
 
-@property (nonatomic, strong) DownloadView *myView;
+@property (nonatomic, strong) DownloadView *view1;
+@property (nonatomic, strong) DownloadView *view2;
 @property(nonatomic, strong) NSTimer *timer; // 定时器
 @end
 
@@ -21,15 +22,21 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    self.myView = [[DownloadView alloc] initWithFrame:CGRectMake(100, 200, 200, 200)];
+    self.view1 = [[DownloadView alloc] initWithFrame:CGRectMake(100, 100, 100, 100) logo:@"logo"];
     
-    [self.view addSubview:self.myView];
+    [self.view addSubview:self.view1];
+    
+    self.view2 = [[DownloadView alloc] initWithFrame:CGRectMake(100, 300, 100, 100) logo:@"logo2"];
+    
+    [self.view addSubview:self.view2];
 }
 
 // 点击开始下载
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     
-    [self.myView begin];
+    [self.view1 begin];
+    
+    [self.view2 begin];
     
     if (_timer == nil) {
         self.timer = [NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(download) userInfo:nil repeats:YES];
@@ -45,7 +52,8 @@
     static CGFloat progress = 0.05;
     
     if (progress <= 1.05) {
-        [self.myView myDownload:progress];
+        [self.view1 myDownload:progress];
+        [self.view2 myDownload:progress];
     } else {
         progress = 0.05f;
         [self.timer invalidate];

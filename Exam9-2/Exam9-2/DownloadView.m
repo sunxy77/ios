@@ -8,8 +8,8 @@
 
 #import "DownloadView.h"
 
-#define MY_CORNER_RADIUS 20 // 图片圆角半经
-#define MY_MARGIN 25 // 边距
+//#define MY_CORNER_RADIUS 20 // 图片圆角半经
+//#define MY_MARGIN 25 // 边距
 
 @interface DownloadView()
 @property (nonatomic, strong) UIBezierPath *path; // Bezier曲线
@@ -21,46 +21,48 @@
 @implementation DownloadView
 
 // 初始化
--(instancetype)initWithFrame:(CGRect)frame {
+-(instancetype)initWithFrame:(CGRect)frame logo:(NSString*)logo {
     self = [super initWithFrame:frame];
     
     if (self) {
         
-        [self setUp];
+        CGFloat myCornerRadius = self.bounds.size.width / 10;
+        
+        UIImageView *imgView = [[UIImageView alloc] initWithFrame:self.bounds];
+        
+        imgView.image = [UIImage imageNamed:logo];
+        imgView.layer.cornerRadius = myCornerRadius;
+        imgView.layer.masksToBounds = YES;
+        
+        [self addSubview:imgView];
     }
     
     return self;
-}
-
-// 添加图片
--(void)setUp {
-    
-    UIImageView *imgView = [[UIImageView alloc] initWithFrame:self.bounds];
-    
-    imgView.image = [UIImage imageNamed:@"logo"];
-    imgView.layer.cornerRadius = MY_CORNER_RADIUS;
-    imgView.layer.masksToBounds = YES;
-    
-    [self addSubview:imgView];
 }
 
 // 开始下载，添加遮罩层
 -(void)begin {
     
     self.start1 = -M_PI/2;
-    
-    self.path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height) cornerRadius:MY_CORNER_RADIUS];
-    
     CGFloat radius = self.bounds.size.width / 2;
     
-    CGFloat width1 = self.bounds.size.width - MY_MARGIN * 2;
-    CGRect rect1 = CGRectMake(MY_MARGIN, MY_MARGIN, width1, width1);
+    CGFloat myCornerRadius = self.bounds.size.width / 10;
+    
+    CGFloat myMargin = self.bounds.size.width / 8;
+    
+    
+    self.path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height) cornerRadius:myCornerRadius];
+    
+    
+    
+    CGFloat width1 = self.bounds.size.width - myMargin * 2;
+    CGRect rect1 = CGRectMake(myMargin, myMargin, width1, width1);
     
     // 外圆路经
     UIBezierPath *c1 = [UIBezierPath bezierPathWithRoundedRect:rect1 cornerRadius:radius];
     
-    CGFloat width2 = self.bounds.size.width - (MY_MARGIN+10) * 2;
-    CGRect rect2 = CGRectMake(MY_MARGIN+10, MY_MARGIN+10, width2, width2);
+    CGFloat width2 = self.bounds.size.width - (myMargin+myCornerRadius/2) * 2;
+    CGRect rect2 = CGRectMake(myMargin+myCornerRadius/2, myMargin+myCornerRadius/2, width2, width2);
     
     // 内圆路经
     UIBezierPath *c2 = [UIBezierPath bezierPathWithRoundedRect:rect2 cornerRadius:radius];
@@ -90,7 +92,10 @@
     
     CGPoint center = CGPointMake(self.bounds.size.width/2, self.bounds.size.width/2);
     
-    CGFloat radius = self.bounds.size.width/2 - MY_MARGIN - 10;
+    CGFloat myMargin = self.bounds.size.width / 8;
+    CGFloat myCornerRadius = self.bounds.size.width / 10;
+    
+    CGFloat radius = self.bounds.size.width/2 - myMargin - myCornerRadius/2;
     
     // 扇形
     UIBezierPath *c3 = [UIBezierPath bezierPathWithArcCenter:center radius:radius startAngle:self.start1 endAngle: end clockwise:YES];
