@@ -9,5 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface PlayerView : UIView
+@property (weak, nonatomic) IBOutlet UIButton *prevBtn;
+
 @property (weak, nonatomic) IBOutlet UIButton *stopBtn;
+@property (weak, nonatomic) IBOutlet UIButton *nextBtn;
+@property (weak, nonatomic) IBOutlet UISlider *mySlider;
+@property (weak, nonatomic) IBOutlet UILabel *title;
+
 @end

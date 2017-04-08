@@ -8,18 +8,31 @@
 
 #import "PlayerView.h"
 
-@interface PlayerView()
+@interface PlayerView()<CAAnimationDelegate>
 
 
 @end
 
 @implementation PlayerView
 
+-(void)awakeFromNib {
+    [super awakeFromNib];
+    
+    
+}
+
+
+
+
 
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect {
     // Drawing code
+}
+- (IBAction)stop:(UIButton *)sender {
+    
+    NSLog(@"stop 35");
 }
 
 @end
