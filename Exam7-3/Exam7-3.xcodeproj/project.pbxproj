@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE7D75461EB049A100239BDD /* WaterFallCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7D75451EB049A100239BDD /* WaterFallCollectionViewCell.m */; };
+		AE7D75481EB049A600239BDD /* WaterFallFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7D75471EB049A600239BDD /* WaterFallFlowLayout.m */; };
 		AEA6825B1E8A095B0021CFA1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA6825A1E8A095B0021CFA1 /* main.m */; };
 		AEA6825E1E8A095B0021CFA1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA6825D1E8A095B0021CFA1 /* AppDelegate.m */; };
 		AEA682611E8A095B0021CFA1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA682601E8A095B0021CFA1 /* ViewController.m */; };
@@ -17,6 +19,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AE7D75451EB049A100239BDD /* WaterFallCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterFallCollectionViewCell.m; sourceTree = "<group>"; };
+		AE7D75471EB049A600239BDD /* WaterFallFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterFallFlowLayout.m; sourceTree = "<group>"; };
+		AE7D75491EB049E000239BDD /* WaterFallFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WaterFallFlowLayout.h; sourceTree = "<group>"; };
+		AE7D754A1EB049ED00239BDD /* WaterFallCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WaterFallCollectionViewCell.h; sourceTree = "<group>"; };
 		AEA682561E8A095B0021CFA1 /* Exam7-3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Exam7-3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEA6825A1E8A095B0021CFA1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AEA6825C1E8A095B0021CFA1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -60,6 +66,8 @@
 		AEA682581E8A095B0021CFA1 /* Exam7-3 */ = {
 			isa = PBXGroup;
 			children = (
+				AE7D75471EB049A600239BDD /* WaterFallFlowLayout.m */,
+				AE7D75451EB049A100239BDD /* WaterFallCollectionViewCell.m */,
 				AEA6825C1E8A095B0021CFA1 /* AppDelegate.h */,
 				AEA6825D1E8A095B0021CFA1 /* AppDelegate.m */,
 				AEA6825F1E8A095B0021CFA1 /* ViewController.h */,
@@ -69,6 +77,8 @@
 				AEA682671E8A095B0021CFA1 /* LaunchScreen.storyboard */,
 				AEA6826A1E8A095B0021CFA1 /* Info.plist */,
 				AEA682591E8A095B0021CFA1 /* Supporting Files */,
+				AE7D75491EB049E000239BDD /* WaterFallFlowLayout.h */,
+				AE7D754A1EB049ED00239BDD /* WaterFallCollectionViewCell.h */,
 			);
 			path = "Exam7-3";
 			sourceTree = "<group>";
@@ -155,6 +165,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AEA682611E8A095B0021CFA1 /* ViewController.m in Sources */,
+				AE7D75481EB049A600239BDD /* WaterFallFlowLayout.m in Sources */,
+				AE7D75461EB049A100239BDD /* WaterFallCollectionViewCell.m in Sources */,
 				AEA6825E1E8A095B0021CFA1 /* AppDelegate.m in Sources */,
 				AEA6825B1E8A095B0021CFA1 /* main.m in Sources */,
 			);
@@ -311,6 +323,7 @@
 				AEA6826F1E8A095B0021CFA1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
