@@ -16,9 +16,6 @@
 		E8F266DA1E9231E300A962CF /* fabrl_mgsv.gif in Resources */ = {isa = PBXBuildFile; fileRef = E8F266D81E9231E300A962CF /* fabrl_mgsv.gif */; };
 		E8F266DB1E9231E300A962CF /* fabrl_qotsa.gif in Resources */ = {isa = PBXBuildFile; fileRef = E8F266D91E9231E300A962CF /* fabrl_qotsa.gif */; };
 		E8F266DD1E92395D00A962CF /* qotsa.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E8F266DC1E92395D00A962CF /* qotsa.jpg */; };
-		E8F266E01E923EA800A962CF /* RevealView.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F266DF1E923EA800A962CF /* RevealView.m */; };
-		E8F266E21E92446D00A962CF /* player.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8F266E11E92446D00A962CF /* player.xib */; };
-		E8F266E51E924E3000A962CF /* PlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F266E41E924E3000A962CF /* PlayerView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,11 +32,6 @@
 		E8F266D81E9231E300A962CF /* fabrl_mgsv.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = fabrl_mgsv.gif; sourceTree = "<group>"; };
 		E8F266D91E9231E300A962CF /* fabrl_qotsa.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = fabrl_qotsa.gif; sourceTree = "<group>"; };
 		E8F266DC1E92395D00A962CF /* qotsa.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = qotsa.jpg; sourceTree = "<group>"; };
-		E8F266DE1E923EA800A962CF /* RevealView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RevealView.h; sourceTree = "<group>"; };
-		E8F266DF1E923EA800A962CF /* RevealView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RevealView.m; sourceTree = "<group>"; };
-		E8F266E11E92446D00A962CF /* player.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = player.xib; sourceTree = "<group>"; };
-		E8F266E31E924E3000A962CF /* PlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerView.h; sourceTree = "<group>"; };
-		E8F266E41E924E3000A962CF /* PlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,11 +73,6 @@
 				E8F266CF1E922F9A00A962CF /* LaunchScreen.storyboard */,
 				E8F266D21E922F9A00A962CF /* Info.plist */,
 				E8F266C11E922F9A00A962CF /* Supporting Files */,
-				E8F266DE1E923EA800A962CF /* RevealView.h */,
-				E8F266DF1E923EA800A962CF /* RevealView.m */,
-				E8F266E11E92446D00A962CF /* player.xib */,
-				E8F266E31E924E3000A962CF /* PlayerView.h */,
-				E8F266E41E924E3000A962CF /* PlayerView.m */,
 			);
 			path = "Exam9-3";
 			sourceTree = "<group>";
@@ -166,7 +153,6 @@
 				E8F266CE1E922F9A00A962CF /* Assets.xcassets in Resources */,
 				E8F266CC1E922F9A00A962CF /* Main.storyboard in Resources */,
 				E8F266DB1E9231E300A962CF /* fabrl_qotsa.gif in Resources */,
-				E8F266E21E92446D00A962CF /* player.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,10 +164,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8F266C91E922F9A00A962CF /* ViewController.m in Sources */,
-				E8F266E01E923EA800A962CF /* RevealView.m in Sources */,
 				E8F266C61E922F9A00A962CF /* AppDelegate.m in Sources */,
 				E8F266C31E922F9A00A962CF /* main.m in Sources */,
-				E8F266E51E924E3000A962CF /* PlayerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,6 +322,7 @@
 				E8F266D71E922F9A00A962CF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
